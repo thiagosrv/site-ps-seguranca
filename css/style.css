@@ -225,6 +225,7 @@ body {
 .nav-link { color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500; }
 .nav-link:hover { color: var(--primary); }
 .nav-actions .button-primary { padding: 10px 16px; border-radius: 9999px; }
+.menu-toggle { display: none; }
 
 /* Hero Section (Restored to Coinbase style) */
 .hero-band-dark {
@@ -508,12 +509,30 @@ body {
     font-size: 14px;
   }
   
-  .display-mega { font-size: 36px; letter-spacing: -1px; }
-  .display-lg { font-size: 32px; letter-spacing: -0.5px; }
-  .display-md { font-size: 28px; }
+  .display-mega { font-size: 32px; letter-spacing: -1px; }
+  .display-lg { font-size: 28px; letter-spacing: -0.5px; }
+  .display-md { font-size: 24px; }
   .body-lg { font-size: 16px; }
   
-  .nav-links, .nav-actions { display: none; }
+  /* Menu Mobile */
+  .logo-slogan { display: none; }
+  .menu-toggle { display: block; background: none; border: none; color: var(--inverse-canvas); cursor: pointer; padding: 8px; }
+  .nav-actions { display: none; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: var(--canvas);
+    padding: 24px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--hairline);
+    gap: 24px;
+    text-align: center;
+  }
+  .nav-links.active { display: flex; }
   
   .section, .section-surface, .section-inverse {
     padding: 64px 0;
