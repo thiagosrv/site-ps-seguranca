@@ -231,7 +231,7 @@ body {
 .hero-band-dark {
   font-family: 'Inter', sans-serif;
   background: var(--inverse-canvas);
-  background-image: linear-gradient(rgba(0, 15, 106, 0.2), rgba(0, 15, 106, 0.2)), url('../herosection.png');
+  background-image: linear-gradient(rgba(0, 15, 106, 0.2), rgba(0, 15, 106, 0.2)), url('../herosection.webp');
   background-size: cover;
   background-position: center top;
   color: white;
@@ -398,14 +398,13 @@ body {
 /* Animations */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  filter: blur(5px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
 }
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-  filter: blur(0);
 }
 
 .delay-1 { transition-delay: 0.1s; }
@@ -483,7 +482,7 @@ body {
   /* Hero Mobile */
   .hero-band-dark {
     /* Gradiente escuro no topo para leitura, mas fica totalmente transparente a partir de 55% */
-    background-image: linear-gradient(to bottom, rgba(0, 15, 106, 0.95) 0%, rgba(0, 15, 106, 0.8) 40%, rgba(0, 15, 106, 0) 60%), url('../herosection2.png');
+    background-image: linear-gradient(to bottom, rgba(0, 15, 106, 0.95) 0%, rgba(0, 15, 106, 0.8) 40%, rgba(0, 15, 106, 0) 60%), url('../herosection2.webp');
     background-position: center bottom;
     background-size: cover;
     padding: 64px 0 500px 0; /* Padding inferior aumentado para 500px para acomodar os 3000px de altura */
