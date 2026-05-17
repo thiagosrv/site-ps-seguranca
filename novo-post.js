@@ -90,13 +90,14 @@ INSTRUÇÕES OBRIGATÓRIAS:
 - Artigo com EXATAMENTE 1.400 a 1.600 palavras (conte e respeite isso)
 - Tom: especialista confiável, direto, sem exageros comerciais
 - A keyword primária DEVE aparecer nos primeiros 100 words da introdução
+- REGRA DE OURO SOBRE PREÇOS: NUNCA mencione valores específicos ou faixas de preço em Reais (R$). Explique de forma detalhada e profissional que os custos são altamente variáveis de acordo com a escala de trabalho (ex: 12x36 ou 44h semanais), o nível de especialização exigido para o posto, a complexidade da implantação, e as necessidades particulares de cada condomínio ou empresa. Destaque que a melhor forma de obter um valor justo é realizando um diagnóstico e orçamento personalizado.
 - Use dados reais do mercado brasileiro de facilities/segurança quando possível
 - Inclua 4-6 seções H2 com parágrafos ricos e densos
 - Adicione H3 dentro das seções quando fizer sentido
 - Use listas (bullet ou numerada) em pelo menos 2 seções
-- O FAQ deve ter 3-4 perguntas que as pessoas realmente pesquisam
-- Links internos: inclua 2-3 links naturais para páginas do site ${CONFIG.domain}/${slugify(topico.cidade)}/${slugify(topico.servico)}/ e ${CONFIG.domain}/${slugify(topico.cidade)}/
-- Na conclusão: CTA para WhatsApp comercial ${CONFIG.whatsapp}${dominiosExtra}
+- O FAQ deve ter 3-4 perguntas que as pessoas realmente pesquisam (se a pergunta do FAQ envolver custos, responda explicando as variáveis operacionais e trabalhistas envolvidas, sem nunca citar valores em R$)
+- Links internos: inclua 2-3 links naturais para páginas do site \${CONFIG.domain}/\${slugify(topico.cidade)}/\${slugify(topico.servico)}/ e \${CONFIG.domain}/\${slugify(topico.cidade)}/
+- Na conclusão: CTA para WhatsApp comercial \${CONFIG.whatsapp}\${dominiosExtra}
 
 RETORNE APENAS JSON válido com esta estrutura (sem markdown, sem \`\`\`):
 {
