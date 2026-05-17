@@ -30,6 +30,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{base_path}}css/style.css?v=4">
 
+    <!-- Breadcrumb Schema -->
+    {{breadcrumb_schema}}
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
@@ -90,6 +93,7 @@
     <header class="hero-band-dark">
         <div class="container hero-content">
             <div class="hero-text">
+                {{breadcrumb_html}}
                 <span class="badge-pill">Americana - SP e Região</span>
                 <h1 class="display-mega">Serviços de {{servico_capitalized}} em {{cidade_capitalized}} com método, supervisão e <span class="text-primary">zero preocupações.</span></h1>
                 <p class="body-lg hero-subtitle">Há 27 anos protegendo condomínios e empresas em {{cidade_capitalized}} com profissionais certificados e operações auditáveis.</p>
@@ -429,6 +433,9 @@
     </section>
 
     </main>
+
+    {{outros_servicos_html}}
+    {{outras_cidades_html}}
 
     <!-- 8. Footer -->
     <footer class="footer">
