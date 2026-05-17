@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos | PS Proteção - 27 anos de segurança na RMC</title>
+    <meta name="description" content="Conheça a história da PS Proteção: 27 anos protegendo empresas e condomínios na RMC com rigor operacional, método e confiança.">
+    <link rel="canonical" href="https://protecaoamericana.com.br/quem-somos/">
+    <link rel="icon" href="../logoprotecao.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../css/style.css?v=4">
+    <style>
+        .page-hero{background:var(--inverse-canvas);color:white;padding:96px 0 64px}
+        .page-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:24px}
+        .page-hero .breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
+        .page-hero h1{font-size:clamp(36px,5vw,56px);font-weight:300;line-height:1.1;margin-bottom:24px;font-family:'Inter',sans-serif}
+        .page-hero h1 span{color:var(--primary);font-weight:700}
+        .page-hero p{font-size:18px;color:rgba(255,255,255,.75);max-width:600px}
+
+        .timeline{position:relative;padding:48px 0}
+        .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--hairline);transform:translateX(-50%)}
+        .tl-item{display:grid;grid-template-columns:1fr 80px 1fr;align-items:start;gap:32px;margin-bottom:56px}
+        .tl-left{text-align:right;padding-top:4px}
+        .tl-center{display:flex;flex-direction:column;align-items:center}
+        .tl-dot{width:20px;height:20px;border-radius:50%;background:var(--primary);border:3px solid var(--canvas);box-shadow:0 0 0 2px var(--primary);z-index:1;flex-shrink:0;margin-top:4px}
+        .tl-dot.current{width:28px;height:28px;background:var(--inverse-canvas);box-shadow:0 0 0 3px var(--inverse-canvas)}
+        .tl-year{font-size:13px;font-weight:700;color:var(--primary);margin-top:8px;font-family:'Inter',sans-serif}
+        .tl-card{border:1px solid var(--hairline);padding:24px 28px;border-left:3px solid var(--primary)}
+        .tl-item:nth-child(even) .tl-card{border-left:none;border-right:3px solid var(--primary)}
+        .tl-item:nth-child(even) .tl-right{order:-1;text-align:right}
+        .tl-item:nth-child(even) .tl-left{order:1;text-align:left}
+        .tl-card h3{font-size:18px;font-weight:600;margin-bottom:8px}
+        .tl-card p{font-size:14px;color:var(--ink-muted);line-height:1.6;margin:0}
+        .tl-icon{font-size:24px;margin-bottom:10px;display:block}
+        .tl-card.dark{background:var(--inverse-canvas);border-color:var(--inverse-canvas);color:white}
+        .tl-card.dark p{color:rgba(255,255,255,.75)}
+        .tl-card.dark h3{color:white}
+
+        .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .val-card{padding:32px;border:1px solid var(--hairline);border-top:3px solid var(--primary)}
+        .val-card h3{font-size:20px;font-weight:600;margin-bottom:12px}
+        .val-card p{color:var(--ink-muted);font-size:14px;line-height:1.6}
+
+        .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+        .team-card{display:flex;gap:20px;align-items:flex-start;padding:32px;border:1px solid var(--hairline)}
+        .team-av{width:64px;height:64px;background:var(--inverse-canvas);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:22px;font-weight:600;flex-shrink:0;font-family:'Inter',sans-serif}
+        .team-card h3{font-size:18px;font-weight:600;margin-bottom:4px}
+        .team-role{font-size:12px;color:var(--primary);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:block}
+        .team-card p{font-size:14px;color:var(--ink-muted);line-height:1.6;margin:0}
+
+        @media(max-width:768px){
+            .timeline::before{left:20px}
+            .tl-item{grid-template-columns:40px 1fr;padding-left:0}
+            .tl-left,.tl-item:nth-child(even) .tl-left{display:none}
+            .tl-item:nth-child(even) .tl-right{order:0;text-align:left}
+            .tl-card{border-left:3px solid var(--primary)!important;border-right:none!important}
+            .values-grid,.team-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container nav-content">
+            <div class="logo" style="display:flex;align-items:center;gap:16px">
+                <a href="../"><img src="../logoprotecao.webp" alt="PS Proteção" fetchpriority="high" width="144" height="48" style="height:48px;width:auto"></a>
+                <span class="logo-slogan" style="color:var(--inverse-canvas);font-weight:600;font-size:14px;letter-spacing:.5px">PS PROTEÇÃO - Sua segurança. Nosso compromisso.</span>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <div class="nav-links">
+                <a href="../#servicos" class="nav-link">Serviços</a>
+                <a href="../quem-somos/" class="nav-link" style="color:var(--primary)">Quem Somos</a>
+                <a href="../contato/" class="nav-link">Contato</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://wa.me/5519978210246" target="_blank" rel="noopener noreferrer" class="button-primary">
+                    <span class="text-default">Falar com Comercial</span>
+                    <span class="text-hover"><span class="pulse-dot"></span> Estamos online</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="breadcrumb"><a href="../">Início</a> / Quem Somos</p>
+                <h1>27 anos de <span>história,</span><br>trabalho e método.</h1>
+                <p>Da portaria ao facilities: conheça a empresa que transformou rigor operacional em confiança para mais de 1.000 clientes na RMC.</p>
+            </div>
+        </section>
+
+        <section class="section-surface">
+            <div class="container">
+                <div class="ibm-grid-4">
+                    <div class="ibm-card authority-card reveal delay-1"><span class="stat-number">27</span><h3 class="body-md" style="font-weight:600">Anos de mercado</h3><p class="body-sm" style="color:var(--ink-muted);margin-top:8px">Desde 1998 servindo com excelência.</p></div>
+                    <div class="ibm-card authority-card reveal delay-2"><span class="stat-number">+1.000</span><h3 class="body-md" style="font-weight:600">Clientes atendidos</h3><p class="body-sm" style="color:var(--ink-muted);margin-top:8px">Condomínios e corporações na RMC.</p></div>
+                    <div class="ibm-card authority-card reveal delay-3"><span class="stat-number">+500</span><h3 class="body-md" style="font-weight:600">Colaboradores formados</h3><p class="body-sm" style="color:var(--ink-muted);margin-top:8px">Treinados e certificados pela PS.</p></div>
+                    <div class="ibm-card authority-card reveal delay-4"><span class="stat-number">15+</span><h3 class="body-md" style="font-weight:600">Anos de parceria média</h3><p class="body-sm" style="color:var(--ink-muted);margin-top:8px">Resultado de entrega consistente.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="ibm-grid-2" style="align-items:center">
+                    <div class="reveal">
+                        <img src="../fundador.webp" alt="Antônio Farias - Fundador da PS Proteção" loading="lazy" decoding="async" width="600" height="338" style="width:100%;border-radius:4px;box-shadow:0 16px 48px rgba(0,0,0,.12)">
+                    </div>
+                    <div class="reveal delay-1">
+                        <span class="caption-strong" style="color:var(--primary)">O FUNDADOR</span>
+                        <h2 class="display-md" style="margin-top:8px;margin-bottom:24px">Antônio Farias</h2>
+                        <p class="body-md" style="color:var(--ink-muted);margin-bottom:16px">A PS Proteção nasceu em 1998 com uma base simples: trabalho sério, proximidade com o cliente e rigor operacional em portaria. Fundada por Antônio Farias, nordestino que construiu sua trajetória em São Paulo, a empresa mantém até hoje sua essência familiar, com gestão profissional e foco em terceirização de portaria e facilities na Região Metropolitana de Campinas.</p>
+                        <p class="body-md" style="color:var(--ink-muted);margin-bottom:16px">Ao longo de mais de 25 anos, crescemos com uma prioridade inegociável: confiabilidade operacional. Isso significa profissionais bem treinados, processos claros e supervisão constante. Já capacitamos mais de 500 colaboradores, atendemos mais de 1.000 clientes e mantemos parcerias que ultrapassam 15 anos — resultado de entrega consistente, não de promessa comercial.</p>
+                        <p class="body-lg" style="font-weight:600;color:var(--ink)">"Transformamos processos em confiança — um posto por vez, todos os dias."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-surface">
+            <div class="container">
+                <div class="reveal" style="text-align:center;margin-bottom:80px">
+                    <span class="caption-strong" style="color:var(--primary)">NOSSA JORNADA</span>
+                    <h2 class="display-md" style="margin-top:8px">Uma linha do tempo de<br>crescimento e confiança.</h2>
+                </div>
+                <div class="timeline">
+
+                    <div class="tl-item reveal">
+                        <div class="tl-left"><p class="body-sm" style="color:var(--ink-muted)">Americana, SP</p></div>
+                        <div class="tl-center"><div class="tl-dot"></div><span class="tl-year">1998</span></div>
+                        <div class="tl-right tl-card">
+                            <span class="tl-icon">🏢</span>
+                            <h3>Fundação da PS Proteção</h3>
+                            <p>Antônio Farias funda a empresa em Americana-SP com missão clara: portaria terceirizada com rigor, sem improviso. Os primeiros contratos são com empresas locais.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="tl-left tl-card">
+                            <span class="tl-icon">🏘️</span>
+                            <h3>Expansão para Condomínios</h3>
+                            <p>Ampliação do escopo para condomínios residenciais e comerciais na RMC, estruturando processos de controle de acesso e rondas de segurança.</p>
+                        </div>
+                        <div class="tl-center"><div class="tl-dot"></div><span class="tl-year">2003</span></div>
+                        <div class="tl-right"></div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="tl-left"><p class="body-sm" style="color:var(--ink-muted)">RMC, SP</p></div>
+                        <div class="tl-center"><div class="tl-dot"></div><span class="tl-year">2008</span></div>
+                        <div class="tl-right tl-card">
+                            <span class="tl-icon">📋</span>
+                            <h3>Implantação dos POPs</h3>
+                            <p>Criação dos Procedimentos Operacionais Padrão para cada tipo de posto. Supervisão ativa em campo, checklists por turno e relatórios periódicos aos clientes.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="tl-left tl-card">
+                            <span class="tl-icon">👥</span>
+                            <h3>500 Colaboradores Formados</h3>
+                            <p>Marco histórico: mais de 500 profissionais capacitados e uniformizados. Parcerias com clientes ultrapassam 10 anos de relacionamento contínuo.</p>
+                        </div>
+                        <div class="tl-center"><div class="tl-dot"></div><span class="tl-year">2013</span></div>
+                        <div class="tl-right"></div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="tl-left"><p class="body-sm" style="color:var(--ink-muted)">Interior SP</p></div>
+                        <div class="tl-center"><div class="tl-dot"></div><span class="tl-year">2018</span></div>
+                        <div class="tl-right tl-card">
+                            <span class="tl-icon">🏆</span>
+                            <h3>1.000 Clientes Atendidos</h3>
+                            <p>Carteira ultrapassa 1.000 clientes, presença em 20+ cidades da RMC. Expansão para Limpeza, Zeladoria e Facilities completos.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="tl-left tl-card">
+                            <span class="tl-icon">📊</span>
+                            <h3>Nova Liderança e Gestão por Dados</h3>
+                            <p>Adriana Farias e Wellington Almeida assumem a liderança estratégica. KPIs mensais, SLAs, conformidade LGPD e gestão por indicadores em todos os postos.</p>
+                        </div>
+                        <div class="tl-center"><div class="tl-dot"></div><span class="tl-year">2021</span></div>
+                        <div class="tl-right"></div>
+                    </div>
+
+                    <div class="tl-item reveal">
+                        <div class="tl-left"><p class="body-sm" style="color:var(--ink-muted)">31 cidades</p></div>
+                        <div class="tl-center"><div class="tl-dot current"></div><span class="tl-year">2026</span></div>
+                        <div class="tl-right tl-card dark">
+                            <span class="tl-icon">🚀</span>
+                            <h3>Hoje — 27 Anos de Legado</h3>
+                            <p>Operações em 31 municípios do interior paulista, mais de 2.500 profissionais em campo e processo de implantação reconhecido como referência em excelência operacional.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="reveal" style="margin-bottom:48px">
+                    <span class="caption-strong" style="color:var(--primary)">LIDERANÇA ATUAL</span>
+                    <h2 class="display-md" style="margin-top:8px">As pessoas por trás<br>de cada operação.</h2>
+                </div>
+                <div class="team-grid reveal delay-1">
+                    <div class="team-card">
+                        <div class="team-av">AF</div>
+                        <div>
+                            <h3>Adriana Farias</h3>
+                            <span class="team-role">Diretora Executiva</span>
+                            <p>Responsável pela gestão estratégica e relacionamento com clientes. Une os valores familiares da PS Proteção à visão moderna de negócio, garantindo crescimento sustentável.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-av">WA</div>
+                        <div>
+                            <h3>Wellington Almeida</h3>
+                            <span class="team-role">Diretor de Operações</span>
+                            <p>Responsável pela supervisão ativa, implantação de novos contratos e gestão por dados. Coordena os POPs, SLAs e KPIs que garantem padronização em todos os postos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-surface">
+            <div class="container">
+                <div class="reveal" style="text-align:center;margin-bottom:48px">
+                    <h2 class="display-md">O que nos move todos os dias.</h2>
+                </div>
+                <div class="values-grid">
+                    <div class="val-card reveal delay-1"><h3>Rigor Operacional</h3><p>Cada posto opera com POPs definidos antes do primeiro dia. Sem improvisos, sem promessas vazias.</p></div>
+                    <div class="val-card reveal delay-2"><h3>Confiabilidade</h3><p>Parcerias médias de 15+ anos falam por si. O cliente não precisa se preocupar — essa é nossa responsabilidade.</p></div>
+                    <div class="val-card reveal delay-3"><h3>Melhoria Contínua</h3><p>KPIs mensais, checklists por turno e planos de ação garantem que entregamos sempre melhor do que ontem.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <h2 class="display-lg reveal" style="margin-bottom:16px">Quer fazer parte dessa história?</h2>
+                <p class="body-lg reveal delay-1" style="margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto">Fale com nosso time comercial e entenda como a PS Proteção pode proteger seu negócio com o mesmo rigor de 27 anos.</p>
+                <a href="https://wa.me/5519978210246" target="_blank" rel="noopener noreferrer" class="button-primary reveal delay-2" style="background-color:var(--inverse-canvas);color:white">
+                    <span class="text-default">Falar com o Comercial</span>
+                    <span class="text-hover"><span class="pulse-dot"></span> Estamos online</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="legal" style="border-top:none;padding-top:0">
+                <p>&copy; 2026 PS PROTEÇÃO — Todos os direitos reservados. CNPJ: 47.425.584/0001-00</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5519978210246" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+    </a>
+    <script src="../js/main.js"></script>
+</body>
+</html>
