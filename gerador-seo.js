@@ -77,12 +77,16 @@ function gerarPaginas() {
             // Vamos testar 3 intenções de busca como pedido:
             // /americana/{servico}
             // /americana/servicos-de-{servico}
-            // /americana/empresa-de-{servico}
-            
+            // 2. Páginas de Serviços Diretos (Ex: /americana/portaria)
             const slugsDeIntencao = [
                 servicoSlug,
                 `servicos-de-${servicoSlug}`,
-                `empresa-de-${servicoSlug}`
+                `empresa-de-${servicoSlug}`,
+                `terceirizacao-de-${servicoSlug}`,
+                `contratar-${servicoSlug}`,
+                `${servicoSlug}-terceirizada`,
+                `melhor-empresa-de-${servicoSlug}`,
+                `orcamento-de-${servicoSlug}`
             ];
 
             slugsDeIntencao.forEach(slugIntencao => {
