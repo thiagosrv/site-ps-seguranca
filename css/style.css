@@ -478,8 +478,80 @@ body {
 }
 @media (max-width: 768px) {
   .ibm-grid-4, .ibm-grid-3, .ibm-grid-2 { grid-template-columns: 1fr; }
-  .hero-actions { flex-direction: column; }
-  .display-mega { font-size: 48px; }
-  .display-lg { font-size: 42px; }
+  
+  /* Hero Mobile */
+  .hero-band-dark {
+    background-image: linear-gradient(rgba(0, 15, 106, 0.4), rgba(0, 15, 106, 0.8)), url('../herosection1.png');
+    background-position: center center;
+    padding: 120px 0 80px 0;
+    text-align: center;
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-actions { 
+    flex-direction: column; 
+    width: 100%;
+    align-items: center;
+  }
+  .hero-actions .button-pill-cta, .hero-actions .button-outline-on-dark {
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+  
+  .display-mega { font-size: 36px; letter-spacing: -1px; }
+  .display-lg { font-size: 32px; letter-spacing: -0.5px; }
+  .display-md { font-size: 28px; }
+  .body-lg { font-size: 16px; }
+  
   .nav-links, .nav-actions { display: none; }
+  
+  .section, .section-surface, .section-inverse {
+    padding: 64px 0;
+  }
+  
+  /* Centralizando o layout geral no mobile */
+  .ibm-card, .ibm-card-surface, .ibm-card-inverse, .service-card, .authority-card {
+    text-align: center;
+  }
+  .icon-box, .icon-box-inverse {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Split Layout */
+  .split-color-box {
+    padding: 64px 5%;
+    text-align: center;
+    align-items: center;
+  }
+  .feature-list-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Avaliações Mobile */
+  #depoimentos > .container > div:first-child {
+    flex-direction: column;
+    text-align: center;
+    align-items: center !important;
+  }
+  #depoimentos .rating-huge {
+    margin-top: 24px;
+  }
+
+  /* Footer Mobile */
+  .footer {
+    text-align: center;
+  }
+  .footer .ibm-grid-4 > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
