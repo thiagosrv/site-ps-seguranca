@@ -2,26 +2,37 @@ const fs = require('fs');
 const path = require('path');
 
 const cidades = [
-    "Valinhos",
-    "Vinhedo",
-    "Paulínia",
-    "Sumaré",
-    "Hortolândia",
-    "Nova Odessa",
-    "Itatiba",
     "Americana",
-    "Indaiatuba",
-    "Monte Mor",
-    "Jaguariúna",
-    "Santa Bárbara d'Oeste",
-    "Morungaba",
-    "Pedreira",
     "Artur Nogueira",
     "Cosmópolis",
     "Elias Fausto",
-    "Louveira",
     "Holambra",
-    "Limeira"
+    "Hortolândia",
+    "Indaiatuba",
+    "Itatiba",
+    "Jaguariúna",
+    "Limeira",
+    "Louveira",
+    "Monte Mor",
+    "Morungaba",
+    "Nova Odessa",
+    "Paulínia",
+    "Pedreira",
+    "Santa Bárbara d'Oeste",
+    "Sumaré",
+    "Valinhos",
+    "Vinhedo",
+    "Araras",
+    "Rio Claro",
+    "Tupi",
+    "São Pedro",
+    "Águas de São Pedro",
+    "Pirassununga",
+    "São Carlos",
+    "Bauru",
+    "Brotas",
+    "Itirapina",
+    "Jaú"
 ];
 
 const servicos = [
@@ -40,8 +51,12 @@ const servicos = [
 
 // Helper para transformar string em slug (ex: "Portaria para Empresas" -> "portaria-para-empresas")
 function slugify(text) {
-    return text.toString().toLowerCase()
+    return text.toString()
+        .normalize('NFD')               // Separa acentos
+        .replace(/[\u0300-\u036f]/g, '') // Remove os acentos
+        .toLowerCase()
         .replace(/\s+/g, '-')           // Substitui espaços por hífen
+        .replace(/['"]/g, '-')          // Troca aspas por hífen (para d'oeste virar d-oeste)
         .replace(/[^\w\-]+/g, '')       // Remove caracteres não-alfanuméricos
         .replace(/\-\-+/g, '-')         // Remove hifens múltiplos
         .replace(/^-+/, '')             // Trim no começo
