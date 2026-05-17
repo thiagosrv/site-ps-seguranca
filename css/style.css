@@ -509,9 +509,9 @@ body {
     font-size: 14px;
   }
   
-  .hero-band-dark h1.display-mega { font-size: 20px !important; letter-spacing: -0.5px; }
-  .display-lg { font-size: 18px; letter-spacing: -0.5px; }
-  .display-md { font-size: 16px; }
+  .hero-band-dark h1.display-mega { font-size: 30px !important; letter-spacing: -0.5px; }
+  .display-lg { font-size: 26px; letter-spacing: -0.5px; }
+  .display-md { font-size: 22px; }
   .body-lg { font-size: 16px; }
   
   /* Menu Mobile */
