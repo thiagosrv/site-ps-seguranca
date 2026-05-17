@@ -483,10 +483,10 @@ body {
   /* Hero Mobile */
   .hero-band-dark {
     /* Gradiente escuro no topo para leitura, mas fica totalmente transparente a partir de 55% */
-    background-image: linear-gradient(to bottom, rgba(0, 15, 106, 0.95) 0%, rgba(0, 15, 106, 0.8) 40%, rgba(0, 15, 106, 0) 60%), url('../herosection1.png');
+    background-image: linear-gradient(to bottom, rgba(0, 15, 106, 0.95) 0%, rgba(0, 15, 106, 0.8) 40%, rgba(0, 15, 106, 0) 60%), url('../herosection2.png');
     background-position: center bottom;
     background-size: cover;
-    padding: 64px 0 380px 0; /* O padding de 380px embaixo garante que a área do guarda fique vazia de texto */
+    padding: 64px 0 500px 0; /* Padding inferior aumentado para 500px para acomodar os 3000px de altura */
     text-align: center;
     display: flex;
     flex-direction: column;
