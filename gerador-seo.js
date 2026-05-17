@@ -1,9 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
-// Dados para geração
 const cidades = [
-    "Americana"
+    "Valinhos",
+    "Vinhedo",
+    "Paulínia",
+    "Sumaré",
+    "Hortolândia",
+    "Nova Odessa",
+    "Itatiba",
+    "Americana",
+    "Indaiatuba",
+    "Monte Mor",
+    "Jaguariúna",
+    "Santa Bárbara d'Oeste",
+    "Morungaba",
+    "Pedreira",
+    "Artur Nogueira",
+    "Cosmópolis",
+    "Elias Fausto",
+    "Louveira",
+    "Holambra",
+    "Limeira"
 ];
 
 const servicos = [
