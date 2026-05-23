@@ -7,6 +7,7 @@ const fs   = require('fs');
 const path = require('path');
 const https = require('https');
 const { pesquisarContexto, agenteDisponivel } = require('./agente-pesquisa');
+const { getLinkagensInternas, formatarParaPrompt } = require('./linkagem-interna');
 
 // ─── CONFIG ───────────────────────────────────────
 const CONFIG = {
@@ -92,7 +93,13 @@ REGRAS PARA USAR O CONTEXTO ACIMA:
 - Use os dados locais de ${topico.cidade} para tornar o conteúdo hiperlocal\n`
         : '';
 
-    return `Você é um redator SEO especialista em segurança privada, portaria e facilities no Brasil. Escreva um artigo completo em português brasileiro para o blog de uma empresa de terceirização de segurança e portaria da Região Metropolitana de Campinas - SP.${blocoContexto}
+    // Links internos de páginas já publicadas
+    const links = getLinkagensInternas({ cidade: topico.cidade, servico: topico.servico });
+    const blocoLinks = links.length
+        ? `\n\n${formatarParaPrompt(links)}\n`
+        : '';
+
+    return `Você é um redator SEO especialista em segurança privada, portaria e facilities no Brasil. Escreva um artigo completo em português brasileiro para o blog de uma empresa de terceirização de segurança e portaria da Região Metropolitana de Campinas - SP.${blocoContexto}${blocoLinks}
 
 TÓPICO: "${topico.topico}"
 SERVIÇO PRINCIPAL: ${topico.servico}
@@ -136,7 +143,7 @@ RETORNE APENAS JSON válido com esta estrutura (sem markdown, sem \`\`\`):
 }`;
 }
 
-function buildPostHTML(data, topico, slug) {
+function buildPostHTML(data, topico, slug, avaliacoes = null) {
     const sectionsHTML = data.sections.map(s => `
         <section class="post-section">
             <h2>${s.h2}</h2>
@@ -205,6 +212,23 @@ function buildPostHTML(data, topico, slug) {
         "mainEntity": [${data.faq.map(f => `{"@type":"Question","name":"${f.question}","acceptedAnswer":{"@type":"Answer","text":"${f.answer.replace(/"/g,"'")}"}}`).join(',')}]
     }
     </script>
+    ${avaliacoes ? `<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "PS Proteção",
+        "url": "${CONFIG.domain}",
+        "telephone": "+55-19-97821-0246",
+        "address": { "@type": "PostalAddress", "addressLocality": "Americana", "addressRegion": "SP", "addressCountry": "BR" },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "${avaliacoes.aggregateRating.ratingValue}",
+            "reviewCount": "${avaliacoes.aggregateRating.reviewCount}",
+            "bestRating": "${avaliacoes.aggregateRating.bestRating}"
+        },
+        "review": [${avaliacoes.reviews.map(r => `{"@type":"Review","author":{"@type":"Person","name":"${r.author}"},"reviewRating":{"@type":"Rating","ratingValue":"${r.rating}"},"datePublished":"${r.date}","reviewBody":"${r.text.replace(/"/g,"'")}"}`).join(',')}]
+    }
+    </script>` : ''}
 </head>
 <body>
     <nav class="top-nav">
@@ -432,10 +456,16 @@ async function main() {
     const data = await callGPT(buildPrompt(topico, contextoAgente));
     const slug = data.slug || slugify(topico.topico);
 
+    // Carrega avaliações para o schema
+    const avaliacoesFile = path.join(__dirname, 'avaliacoes.json');
+    const avaliacoes = fs.existsSync(avaliacoesFile)
+        ? JSON.parse(fs.readFileSync(avaliacoesFile, 'utf8'))
+        : null;
+
     // Cria pasta e HTML do post
     const postDir = path.join(CONFIG.blogDir, slug);
     if (!fs.existsSync(postDir)) fs.mkdirSync(postDir, { recursive: true });
-    fs.writeFileSync(path.join(postDir, 'index.html'), buildPostHTML(data, topico, slug), 'utf8');
+    fs.writeFileSync(path.join(postDir, 'index.html'), buildPostHTML(data, topico, slug, avaliacoes), 'utf8');
     console.log(`✅ Post criado: blog/${slug}/index.html`);
 
     // Atualiza posts.json
@@ -468,7 +498,7 @@ async function main() {
     console.log(`🔗 URL: ${CONFIG.domain}/blog/${slug}/\n`);
 }
 
-module.exports = { main };
+module.exports = { main, buildPostHTMLExport: buildPostHTML };
 
 if (require.main === module) {
     main().catch(err => {

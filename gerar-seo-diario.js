@@ -8,6 +8,7 @@ const fs   = require('fs');
 const path = require('path');
 const https = require('https');
 const { pesquisarContexto, agenteDisponivel } = require('./agente-pesquisa');
+const { getLinkagensInternas, formatarParaPrompt } = require('./linkagem-interna');
 
 // ─── CONFIG ─────────────────────────────────────────────────
 const CONFIG = {
@@ -147,7 +148,7 @@ function callGPT(prompt) {
 }
 
 // ─── PROMPT ─────────────────────────────────────────────────
-function buildSEOPrompt(cidade, servico, angulo, contextoAgente = '') {
+function buildSEOPrompt(cidade, servico, angulo, contextoAgente = '', linksInternos = '') {
     const titulo     = angulo.titulo.replace('{Servico}', servico).replace('{Cidade}', cidade);
     const cidadeSlug = slugify(cidade);
     const servicoSlug = slugify(servico);
@@ -167,7 +168,9 @@ REGRAS PARA USAR O CONTEXTO ACIMA:
 - Use os dados locais de ${cidade} para tornar o conteúdo hiperlocal\n`
         : '';
 
-    return `Você é um especialista em SEO e copy B2B para empresas de segurança terceirizada no Brasil.${blocoContexto}
+    const blocoLinks = linksInternos ? `\n\n${linksInternos}\n` : '';
+
+    return `Você é um especialista em SEO e copy B2B para empresas de segurança terceirizada no Brasil.${blocoContexto}${blocoLinks}
 
 Gere o conteúdo de uma landing page de serviço para a PS Proteção — empresa com 27 anos atuando na Região Metropolitana de Campinas/SP.
 
@@ -188,6 +191,7 @@ REGRAS OBRIGATÓRIAS:
 - 3 seções H2 ricas (use <p>, <ul><li>, <strong> — HTML puro, sem markdown)
 - FAQ com 3 perguntas reais do público (use as FAQs do contexto de pesquisa se disponíveis; respostas 60-80 words; nunca mencione R$)
 - Links internos naturais para: ${hubUrl} e ${servicoUrl}
+- Use os links internos listados acima como âncoras contextuais (3-4 deles, de forma natural)
 - Conclusão com CTA para ${CONFIG.whatsapp}
 
 RETORNE APENAS JSON válido (sem backticks, sem markdown):
@@ -206,7 +210,7 @@ RETORNE APENAS JSON válido (sem backticks, sem markdown):
 }
 
 // ─── BUILDER HTML ────────────────────────────────────────────
-function buildLandingPage(data, cidade, servico, angulo, slug) {
+function buildLandingPage(data, cidade, servico, angulo, slug, avaliacoes = null) {
     const cidadeSlug  = slugify(cidade);
     const servicoSlug = slugify(servico);
     const basePath    = '../../';
@@ -277,6 +281,23 @@ ${breadcrumbSchema}
     <script type="application/ld+json">
 ${faqSchema}
     </script>
+    ${avaliacoes ? `<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "PS Proteção",
+        "url": "${CONFIG.domain}",
+        "telephone": "+55-19-97821-0246",
+        "address": { "@type": "PostalAddress", "addressLocality": "${cidade}", "addressRegion": "SP", "addressCountry": "BR" },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "${avaliacoes.aggregateRating.ratingValue}",
+            "reviewCount": "${avaliacoes.aggregateRating.reviewCount}",
+            "bestRating": "${avaliacoes.aggregateRating.bestRating}"
+        },
+        "review": [${avaliacoes.reviews.slice(0,3).map(r => `{"@type":"Review","author":{"@type":"Person","name":"${r.author}"},"reviewRating":{"@type":"Rating","ratingValue":"${r.rating}"},"datePublished":"${r.date}","reviewBody":"${r.text.replace(/"/g,"'")}"}`).join(',')}]
+    }
+    </script>` : ''}
 </head>
 <body>
 
@@ -450,14 +471,24 @@ async function gerarPaginasSEO() {
                 }
             }
 
+            // Links internos de páginas já publicadas
+            const links = getLinkagensInternas({ cidade, servico, slugAtual: id });
+            const linksTexto = formatarParaPrompt(links);
+
+            // Avaliações para schema
+            const avaliacoesFile = path.join(__dirname, 'avaliacoes.json');
+            const avaliacoes = fs.existsSync(avaliacoesFile)
+                ? JSON.parse(fs.readFileSync(avaliacoesFile, 'utf8'))
+                : null;
+
             console.log('⏳ Chamando GPT-4o...');
-            const data = await callGPT(buildSEOPrompt(cidade, servico, angulo, contextoAgente));
-            const slug = slugAngulo; // slug fixo pelo template para consistência de URL
+            const data = await callGPT(buildSEOPrompt(cidade, servico, angulo, contextoAgente, linksTexto));
+            const slug = slugAngulo;
 
             const destDir = path.join(__dirname, cidadeSlug, slug);
             if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
 
-            const html = buildLandingPage(data, cidade, servico, angulo, slug);
+            const html = buildLandingPage(data, cidade, servico, angulo, slug, avaliacoes);
             fs.writeFileSync(path.join(destDir, 'index.html'), html, 'utf8');
             console.log(`   ✅ Criado: ${cidadeSlug}/${slug}/index.html`);
 

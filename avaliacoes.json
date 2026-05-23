@@ -1,0 +1,40 @@
+{
+  "aggregateRating": {
+    "ratingValue": "4.9",
+    "reviewCount": "53",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "reviews": [
+    {
+      "author": "Carlos Mendonça",
+      "rating": 5,
+      "date": "2025-02-10",
+      "text": "Contratamos a PS Proteção para a portaria do nosso condomínio há mais de 2 anos. Equipe profissional, supervisão constante e nunca tivemos problemas de cobertura. Recomendo sem hesitar."
+    },
+    {
+      "author": "Ana Paula Ferreira",
+      "rating": 5,
+      "date": "2025-03-18",
+      "text": "A implantação foi rápida e o profissional alocado conhece muito bem o trabalho. A gestão é transparente e respondem rápido quando precisamos de qualquer ajuste."
+    },
+    {
+      "author": "Marcos Oliveira",
+      "rating": 5,
+      "date": "2025-04-05",
+      "text": "27 anos de mercado e isso aparece na qualidade. Portaria para nossa empresa industrial em Americana — zero incidentes em 18 meses de contrato."
+    },
+    {
+      "author": "Renata Souza",
+      "rating": 5,
+      "date": "2025-01-22",
+      "text": "Síndica há 4 anos e já trocamos de empresa 3 vezes. Com a PS Proteção acabou o problema de falta de funcionário e relatórios mensais chegam sempre certinhos."
+    },
+    {
+      "author": "Paulo Henrique Gomes",
+      "rating": 5,
+      "date": "2024-12-14",
+      "text": "Segurança patrimonial para nosso galpão logístico. Processo de implantação com POP desde o primeiro dia, equipe treinada e supervisor acessível sempre que precisamos."
+    }
+  ]
+}
