@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "sharp": "^0.34.5"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.98.0"
   }
 }

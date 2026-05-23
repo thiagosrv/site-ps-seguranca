@@ -6,6 +6,7 @@
 const fs   = require('fs');
 const path = require('path');
 const https = require('https');
+const { pesquisarContexto, agenteDisponivel } = require('./agente-pesquisa');
 
 // ─── CONFIG ───────────────────────────────────────
 const CONFIG = {
@@ -21,7 +22,7 @@ const CONFIG = {
     topicsFile: path.join(__dirname, 'topics.json'),
     postsFile:  path.join(__dirname, 'blog', 'posts.json'),
     blogDir:    path.join(__dirname, 'blog'),
-    autoPush: true,
+    autoPush: process.env.NO_AUTO_PUSH !== '1',
 };
 
 // ─── HELPERS ──────────────────────────────────────
@@ -73,12 +74,16 @@ function callGPT(prompt) {
     });
 }
 
-function buildPrompt(topico) {
+function buildPrompt(topico, contextoAgente = '') {
     const dominiosExtra = CONFIG.outrosDominios.length > 0
         ? `\nLinks para outros domínios do autor (incluir 1-2 naturalmente no texto, como referências úteis):\n${CONFIG.outrosDominios.map(d => `- ${d.url} (${d.descricao})`).join('\n')}`
         : '';
 
-    return `Você é um redator SEO especialista em segurança privada, portaria e facilities no Brasil. Escreva um artigo completo em português brasileiro para o blog de uma empresa de terceirização de segurança e portaria da Região Metropolitana de Campinas - SP.
+    const blocoContexto = contextoAgente
+        ? `\n\nCONTEXTO DE PESQUISA (use para enriquecer o artigo com dados reais e FAQs relevantes):\n${contextoAgente}\n`
+        : '';
+
+    return `Você é um redator SEO especialista em segurança privada, portaria e facilities no Brasil. Escreva um artigo completo em português brasileiro para o blog de uma empresa de terceirização de segurança e portaria da Região Metropolitana de Campinas - SP.${blocoContexto}
 
 TÓPICO: "${topico.topico}"
 SERVIÇO PRINCIPAL: ${topico.servico}
@@ -395,9 +400,26 @@ async function main() {
     console.log(`📝 Gerando: "${topico.topico}"`);
     console.log(`   Cidade: ${topico.cidade} | Serviço: ${topico.servico}\n`);
 
-    // Chama GPT
-    console.log('⏳ Chamando GPT-4o...');
-    const data = await callGPT(buildPrompt(topico));
+    // ── Etapa 1: Pesquisa com agente Claude (opcional) ────
+    let contextoAgente = '';
+    if (agenteDisponivel()) {
+        try {
+            contextoAgente = await pesquisarContexto({
+                keyword: topico.keyword,
+                cidade:  topico.cidade,
+                servico: topico.servico,
+                tipo:    topico.tipo,
+            });
+        } catch(e) {
+            console.warn('   ⚠️  Pesquisa Claude falhou (continuando sem contexto):', e.message);
+        }
+    } else {
+        console.log('   ℹ️  ANTHROPIC_API_KEY não definida — gerando sem pesquisa prévia.');
+    }
+
+    // ── Etapa 2: Redação com GPT-4o ───────────────────────
+    console.log('\n⏳ Chamando GPT-4o para redigir o artigo...');
+    const data = await callGPT(buildPrompt(topico, contextoAgente));
     const slug = data.slug || slugify(topico.topico);
 
     // Cria pasta e HTML do post
@@ -436,7 +458,11 @@ async function main() {
     console.log(`🔗 URL: ${CONFIG.domain}/blog/${slug}/\n`);
 }
 
-main().catch(err => {
-    console.error('\n❌ Erro:', err.message);
-    process.exit(1);
-});
+module.exports = { main };
+
+if (require.main === module) {
+    main().catch(err => {
+        console.error('\n❌ Erro:', err.message);
+        process.exit(1);
+    });
+}
