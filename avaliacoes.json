@@ -1,4 +1,37 @@
 {
+  "business": {
+    "name": "PS Proteção - Portaria e Segurança",
+    "url": "https://protecaoamericana.com.br",
+    "telephone": "+55-19-97821-0246",
+    "email": "contato@protecaoamericana.com.br",
+    "cnpj": "47.425.584/0001-00",
+    "foundingYear": "1998",
+    "address": {
+      "streetAddress": "Rua São Gabriel, 1623",
+      "addressLocality": "Americana",
+      "addressRegion": "SP",
+      "postalCode": "13467-380",
+      "addressCountry": "BR",
+      "neighborhood": "Vila Belvedere"
+    },
+    "geo": {
+      "latitude": -22.7301816,
+      "longitude": -47.30249
+    },
+    "sameAs": [
+      "https://maps.app.goo.gl/y8RtmURSeczWepXu7",
+      "https://www.google.com/maps/place/PS+Prote%C3%A7%C3%A3o+-+Portaria+e+Seguran%C3%A7a/@-22.7301816,-47.30249,17z"
+    ],
+    "areaServed": [
+      "Americana", "Santa Bárbara d'Oeste", "Sumaré", "Nova Odessa",
+      "Hortolândia", "Campinas", "Limeira", "Piracicaba", "Indaiatuba"
+    ],
+    "serviceType": [
+      "Portaria Terceirizada", "Segurança Patrimonial", "Vigilância",
+      "Rondas de Segurança", "Portaria para Condomínios", "Limpeza Terceirizada",
+      "Zelador", "Copeira Corporativa", "Facilities"
+    ]
+  },
   "aggregateRating": {
     "ratingValue": "4.9",
     "reviewCount": "53",

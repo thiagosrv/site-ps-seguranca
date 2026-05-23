@@ -285,10 +285,25 @@ ${faqSchema}
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "PS Proteção",
-        "url": "${CONFIG.domain}",
-        "telephone": "+55-19-97821-0246",
-        "address": { "@type": "PostalAddress", "addressLocality": "${cidade}", "addressRegion": "SP", "addressCountry": "BR" },
+        "name": "${avaliacoes.business.name}",
+        "url": "${avaliacoes.business.url}",
+        "telephone": "${avaliacoes.business.telephone}",
+        "foundingDate": "${avaliacoes.business.foundingYear}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "${avaliacoes.business.address.streetAddress}",
+            "addressLocality": "${cidade}",
+            "addressRegion": "${avaliacoes.business.address.addressRegion}",
+            "postalCode": "${avaliacoes.business.address.postalCode}",
+            "addressCountry": "${avaliacoes.business.address.addressCountry}"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": ${avaliacoes.business.geo.latitude},
+            "longitude": ${avaliacoes.business.geo.longitude}
+        },
+        "sameAs": ${JSON.stringify(avaliacoes.business.sameAs)},
+        "areaServed": ${JSON.stringify(avaliacoes.business.areaServed)},
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "${avaliacoes.aggregateRating.ratingValue}",
