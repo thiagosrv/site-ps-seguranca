@@ -80,7 +80,16 @@ function buildPrompt(topico, contextoAgente = '') {
         : '';
 
     const blocoContexto = contextoAgente
-        ? `\n\nCONTEXTO DE PESQUISA (use para enriquecer o artigo com dados reais e FAQs relevantes):\n${contextoAgente}\n`
+        ? `\n\nCONTEXTO DE PESQUISA — USE OBRIGATORIAMENTE:
+${contextoAgente}
+
+REGRAS PARA USAR O CONTEXTO ACIMA:
+- Cite as fontes autoritativas no corpo do texto com links externos naturais: <a href="URL" target="_blank" rel="noopener noreferrer">Texto âncora</a>
+- Mencione dados e estatísticas concretos com atribuição à fonte (ex: "Segundo a ABESE...")
+- Referencie a legislação aplicável pelo nome correto (ex: "A Lei 7.102/83 determina que...")
+- Use as FAQs reais coletadas para construir a seção de perguntas frequentes
+- Incorpore os termos LSI naturalmente ao longo do texto
+- Use os dados locais de ${topico.cidade} para tornar o conteúdo hiperlocal\n`
         : '';
 
     return `Você é um redator SEO especialista em segurança privada, portaria e facilities no Brasil. Escreva um artigo completo em português brasileiro para o blog de uma empresa de terceirização de segurança e portaria da Região Metropolitana de Campinas - SP.${blocoContexto}
@@ -95,8 +104,9 @@ INSTRUÇÕES OBRIGATÓRIAS:
 - Artigo com EXATAMENTE 1.400 a 1.600 palavras (conte e respeite isso)
 - Tom: especialista confiável, direto, sem exageros comerciais
 - A keyword primária DEVE aparecer nos primeiros 100 words da introdução
-- REGRA DE OURO SOBRE PREÇOS: NUNCA mencione valores específicos ou faixas de preço em Reais (R$). Explique de forma detalhada e profissional que os custos são altamente variáveis de acordo com a escala de trabalho (ex: 12x36 ou 44h semanais), o nível de especialização exigido para o posto, a complexidade da implantação, e as necessidades particulares de cada condomínio ou empresa. Destaque que a melhor forma de obter um valor justo é realizando um diagnóstico e orçamento personalizado.
-- Use dados reais do mercado brasileiro de facilities/segurança quando possível
+- NUNCA mencione valores em R$ ou faixas de preço — redirecione para orçamento personalizado
+- Use dados reais do mercado brasileiro de facilities/segurança — cite fontes autoritativas com links externos quando disponível (ABESE, legislação, IBGE, etc.)
+- Mencione legislação aplicável pelo nome correto quando relevante (Lei 7.102/83, CLT, LGPD, NRs)
 - Inclua 4-6 seções H2 com parágrafos ricos e densos
 - Adicione H3 dentro das seções quando fizer sentido
 - Use listas (bullet ou numerada) em pelo menos 2 seções

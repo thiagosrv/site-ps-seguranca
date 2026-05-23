@@ -155,7 +155,16 @@ function buildSEOPrompt(cidade, servico, angulo, contextoAgente = '') {
     const servicoUrl = `${CONFIG.domain}/${cidadeSlug}/${servicoSlug}/`;
 
     const blocoContexto = contextoAgente
-        ? `\n\nCONTEXTO DE PESQUISA (use para enriquecer a página com dados reais e FAQs relevantes):\n${contextoAgente}\n`
+        ? `\n\nCONTEXTO DE PESQUISA — USE OBRIGATORIAMENTE:
+${contextoAgente}
+
+REGRAS PARA USAR O CONTEXTO ACIMA:
+- Cite as fontes autoritativas no texto com links externos naturais: <a href="URL" target="_blank" rel="noopener noreferrer">Texto âncora</a>
+- Mencione dados e estatísticas concretos com atribuição à fonte (ex: "Segundo a ABESE...")
+- Referencie a legislação pelo nome correto (ex: "conforme a Lei 7.102/83...")
+- Use as FAQs reais coletadas para as 3 perguntas da seção de FAQ
+- Incorpore os termos LSI naturalmente ao longo do texto
+- Use os dados locais de ${cidade} para tornar o conteúdo hiperlocal\n`
         : '';
 
     return `Você é um especialista em SEO e copy B2B para empresas de segurança terceirizada no Brasil.${blocoContexto}
@@ -170,12 +179,14 @@ DOMÍNIO: ${CONFIG.domain}
 
 REGRAS OBRIGATÓRIAS:
 - Tom: especialista confiável, direto ao ponto, sem exageros comerciais
-- NUNCA mencione valores em R$ ou faixas de preço — explique que o custo depende de escala, complexidade operacional e escopo; oriente o leitor a solicitar um diagnóstico personalizado
+- NUNCA mencione valores em R$ ou faixas de preço — redirecione para orçamento personalizado
+- Cite fontes autoritativas com links externos quando disponível (ABESE, legislação, IBGE, entidades do setor)
+- Mencione legislação aplicável pelo nome correto quando relevante (Lei 7.102/83, CLT, LGPD, NRs)
 - H1 impactante (até 65 chars) com keyword da cidade e serviço
 - Meta description com keyword (até 155 chars)
 - Intro: 80-120 words com keyword nos primeiros 50 words
 - 3 seções H2 ricas (use <p>, <ul><li>, <strong> — HTML puro, sem markdown)
-- FAQ com 3 perguntas reais (respostas 60-80 words; nunca mencione R$)
+- FAQ com 3 perguntas reais do público (use as FAQs do contexto de pesquisa se disponíveis; respostas 60-80 words; nunca mencione R$)
 - Links internos naturais para: ${hubUrl} e ${servicoUrl}
 - Conclusão com CTA para ${CONFIG.whatsapp}
 

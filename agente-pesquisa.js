@@ -46,24 +46,38 @@ async function pesquisarContexto({ keyword, cidade, servico, tipo }) {
             role: 'user',
             content: `Você é um pesquisador de SEO especializado em serviços de segurança e facilities no interior de São Paulo, Brasil.
 
-Pesquise informações para enriquecer o seguinte conteúdo que vou criar:
+Pesquise referências autoritativas para enriquecer um conteúdo sobre:
 - Keyword: "${keyword}"
 - Cidade: ${cidade}
 - Serviço: ${servico}
 - Tipo de conteúdo: ${tipo}
 
-Faça buscas sobre:
-1. O que está ranqueando no Google para "${keyword}"
-2. Perguntas reais que empresas/síndicos fazem sobre ${servico} na região
-3. Dados relevantes sobre ${cidade} (perfil econômico, condomínios, indústrias — o que for aplicável)
-4. Como concorrentes posicionam esse serviço
+Faça buscas para encontrar:
+1. Artigos da ABESE (Associação Brasileira das Empresas de Segurança Eletrônica) ou entidades do setor
+2. Legislação relevante: CLT, Lei 7.102/83 (segurança privada), NRs aplicáveis, LGPD
+3. Dados do IBGE ou prefeitura sobre ${cidade} (perfil econômico, industrial, habitacional)
+4. Notícias recentes (últimos 2 anos) sobre segurança privada ou facilities no Brasil
+5. Artigos do Wikipedia ou portais especializados sobre ${servico}
+6. Perguntas reais que síndicos/gestores fazem sobre ${servico} (Reclame Aqui, fóruns, Reddit)
 
 Entregue um resumo estruturado com:
-**Ângulo diferencial**: o que os concorrentes NÃO estão abordando bem
-**FAQs reais**: 3-5 perguntas que o público genuinamente pesquisa
-**Dados locais de ${cidade}**: qualquer dado específico útil (perfil industrial, número de condomínios, etc.)
-**Termos semânticos (LSI)**: 5-8 termos relacionados para usar no texto
-**Tom recomendado**: como escrever para esse público específico`
+
+**Fontes autoritativas para citar** (inclua URL real se encontrar):
+- Nome da fonte | URL | Por que é relevante para o texto
+
+**Dados e estatísticas concretas** (com fonte):
+- Ex: "Segundo a ABESE, o setor de segurança privada emprega X pessoas no Brasil"
+
+**Legislação aplicável**:
+- Leis, normas ou resoluções que o redator deve mencionar com precisão
+
+**FAQs reais do público** (3-4 perguntas genuínas):
+- Perguntas que síndicos, gestores de RH ou administradores realmente fazem sobre ${servico}
+
+**Dados locais de ${cidade}**:
+- Perfil econômico, industrial ou habitacional útil para contextualizar o texto
+
+**Termos semânticos (LSI)** — 6-8 termos relacionados para usar no texto sem forçar`
         }],
     });
 
