@@ -30,5 +30,21 @@
     "servico": "Portaria",
     "cidade": "Americana",
     "tipo": "preco"
+  },
+  {
+    "slug": "portaria-terceirizada-americana-custos-beneficios",
+    "title": "Portaria Terceirizada em Americana: Custos e Benefícios",
+    "meta_description": "Descubra os benefícios e custos da portaria terceirizada em Americana, SP. Saiba como otimizar recursos e garantir segurança.",
+    "tags": [
+      "portaria terceirizada",
+      "Americana",
+      "segurança privada",
+      "facilities"
+    ],
+    "date": "24 de maio de 2026",
+    "dateISO": "2026-05-24",
+    "servico": "Portaria",
+    "cidade": "Americana",
+    "tipo": "preco"
   }
 ]

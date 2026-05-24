@@ -14,5 +14,21 @@
     "angulo": "supervisao-estrategica",
     "slug": "vigia-com-supervisao-estrategica",
     "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-24-horas",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "24-horas",
+    "slug": "vigia-24-horas",
+    "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-para-industria",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "para-industria",
+    "slug": "vigia-para-industria",
+    "data": "2026-05-24"
   }
 ]
