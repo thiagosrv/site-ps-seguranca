@@ -1,0 +1,18 @@
+[
+  {
+    "id": "americana/cotacao-de-vigia",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "cotacao",
+    "slug": "cotacao-de-vigia",
+    "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-com-supervisao-estrategica",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "supervisao-estrategica",
+    "slug": "vigia-com-supervisao-estrategica",
+    "data": "2026-05-24"
+  }
+]

@@ -10,6 +10,7 @@ const { execSync } = require('child_process');
 const { main: gerarBlog }            = require('./novo-post');
 const { gerarPaginasSEO }            = require('./gerar-seo-diario');
 const { atualizarPostMaisAntigo }    = require('./atualizar-posts');
+const { atualizarBanco }             = require('./agente-conhecimento');
 
 function linha() { console.log('─'.repeat(50)); }
 
@@ -57,8 +58,19 @@ async function main() {
 
     linha();
 
-    // ── Etapa 3: Atualização de post antigo (toda segunda e quinta) ──
+    // ── Etapa 3: Banco de conhecimento (todo domingo) ───────
     const diaSemana = new Date().getDay(); // 0=dom, 1=seg, 4=qui
+    if (diaSemana === 0) {
+        console.log('\n📚 [3/5] Atualizando banco de conhecimento...\n');
+        try {
+            await atualizarBanco();
+        } catch(e) {
+            console.error('❌ Banco de conhecimento falhou:', e.message);
+        }
+        linha();
+    }
+
+    // ── Etapa 4: Atualização de post antigo (toda segunda e quinta) ──
     if (diaSemana === 1 || diaSemana === 4) {
         console.log('\n🔄 [3/4] Atualizando post antigo...\n');
         try {
@@ -69,8 +81,8 @@ async function main() {
         linha();
     }
 
-    // ── Etapa 4: Git Push único ─────────────────────────────
-    console.log('\n📤 [4/4] Publicando no GitHub/Vercel...\n');
+    // ── Etapa 5: Git Push único ─────────────────────────────
+    console.log('\n📤 [5/5] Publicando no GitHub/Vercel...\n');
     gitPush();
 
     linha();
