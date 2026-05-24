@@ -88,7 +88,7 @@ async function pesquisarConhecimento(servico) {
 
     const response = await client.messages.create({
         model: 'claude-opus-4-6',
-        max_tokens: 6000,
+        max_tokens: 8000,
         thinking: { type: 'adaptive' },
         tools: [{ type: 'web_search_20250305', name: 'web_search' }],
         messages: [{
@@ -104,34 +104,38 @@ Pesquise profundamente sobre "${servico}" no contexto brasileiro, com foco em:
 6. Tendências para os próximos 12 meses — o que especialistas estão dizendo
 7. Diferenciais que empresas sérias oferecem vs. empresas amadoras
 
-Após pesquisar, entregue um JSON estruturado (APENAS JSON válido, sem markdown):
+Após pesquisar, entregue um JSON estruturado (APENAS JSON válido, sem markdown).
+IMPORTANTE: seja conciso em cada campo — máximo 2 frases por descrição.
+
 {
   "servico": "${servico}",
-  "resumo_executivo": "2-3 frases sobre o momento atual do setor",
+  "resumo_executivo": "2 frases sobre o momento atual do setor",
   "tendencias": [
-    { "titulo": "nome da tendência", "descricao": "explicação densa 80-120 words", "fonte": "nome da fonte", "url": "url se disponível" }
+    { "titulo": "nome curto", "descricao": "max 2 frases", "fonte": "nome", "url": "url" }
   ],
   "dados_mercado": [
-    { "dado": "estatística ou fato concreto", "fonte": "nome da fonte", "url": "url se disponível", "ano": "2024 ou 2025" }
+    { "dado": "estatística concreta", "fonte": "nome", "url": "url", "ano": "2024 ou 2025" }
   ],
   "regulatorio": [
-    { "norma": "nome da lei/NR/convenção", "resumo": "o que muda na prática", "url": "link oficial se disponível" }
+    { "norma": "nome da lei/NR", "resumo": "max 2 frases", "url": "link" }
   ],
   "dores_contratantes": [
-    { "dor": "problema real", "contexto": "quem sente e em que situação", "frequencia": "muito comum / comum / ocasional" }
+    { "dor": "problema real em 1 frase", "contexto": "quem sente", "frequencia": "muito comum / comum" }
   ],
   "diferenciais_setor": [
-    { "diferencial": "o que separa bons de ruins", "descricao": "por que isso importa para o contratante" }
+    { "diferencial": "1 frase", "descricao": "1 frase" }
   ],
   "angulos_linkedin": [
-    { "titulo": "título do post", "angulo": "abordagem (opinião / dado / tendência / provocação)", "gancho": "primeira frase impactante" }
+    { "titulo": "título do post", "angulo": "opinião / dado / tendência / provocação", "gancho": "primeira frase impactante" }
   ],
   "angulos_blog_autoridade": [
-    { "titulo": "título do artigo", "tipo": "guia / análise / previsão / caso", "diferencial": "o que torna esse artigo único vs. conteúdo comum" }
+    { "titulo": "título do artigo", "tipo": "guia / análise / previsão", "diferencial": "1 frase" }
   ],
-  "termos_especializados": ["termo1", "termo2", "..."],
+  "termos_especializados": ["termo1", "termo2", "termo3", "termo4", "termo5"],
   "updatedAt": "${new Date().toISOString()}"
-}`
+}
+
+Limite: máximo 5 itens por array. Priorize qualidade sobre quantidade.`
         }],
     });
 
@@ -144,11 +148,29 @@ Após pesquisar, entregue um JSON estruturado (APENAS JSON válido, sem markdown
     // Tenta parsear o JSON retornado
     let dados;
     try {
-        // Remove possível markdown ao redor
         const jsonMatch = textoResposta.match(/\{[\s\S]*\}/);
-        dados = JSON.parse(jsonMatch ? jsonMatch[0] : textoResposta);
+        const jsonStr   = jsonMatch ? jsonMatch[0] : textoResposta;
+        dados = JSON.parse(jsonStr);
     } catch(e) {
-        throw new Error(`Claude não retornou JSON válido: ${e.message}`);
+        // Fallback: tenta recuperar JSON truncado fechando colchetes/chaves pendentes
+        try {
+            const jsonMatch = textoResposta.match(/\{[\s\S]*/);
+            if (!jsonMatch) throw new Error('Sem JSON na resposta');
+            let jsonStr = jsonMatch[0];
+            // Fecha arrays e objetos abertos
+            const abre = (jsonStr.match(/\[/g) || []).length;
+            const fecha = (jsonStr.match(/\]/g) || []).length;
+            const abreObj = (jsonStr.match(/\{/g) || []).length;
+            const fechaObj = (jsonStr.match(/\}/g) || []).length;
+            // Remove trailing vírgulas e fecha estrutura
+            jsonStr = jsonStr.replace(/,\s*$/, '');
+            jsonStr += ']'.repeat(Math.max(0, abre - fecha));
+            jsonStr += '}'.repeat(Math.max(0, abreObj - fechaObj));
+            dados = JSON.parse(jsonStr);
+            console.log('   ⚠️  JSON recuperado após truncamento');
+        } catch(e2) {
+            throw new Error(`Claude não retornou JSON válido: ${e.message}`);
+        }
     }
 
     // Garante o campo updatedAt

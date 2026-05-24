@@ -1,0 +1,206 @@
+{
+  "servico": "Portaria",
+  "resumo_executivo": "O setor de portaria no Brasil vive uma transformação acelerada com crescimento de 25,3% na portaria remota em 2025, impulsionado por IA, reconhecimento facial e busca por redução de custos em condomínios. A aprovação do Estatuto da Segurança Privada (Lei 14.967/2024) trouxe mais segurança jurídica ao setor, enquanto leis restritivas locais como a do DF geram debate sobre o futuro da automação condominial.",
+  "tendencias": [
+    {
+      "titulo": "Portaria remota cresce 25,3%",
+      "descricao": "O segmento de portaria remota cresceu 25,3% em 2025 segundo a ABESE, consolidando-se como modelo dominante de modernização condominial. Mais de 14 mil condomínios no Brasil já adotaram o sistema.",
+      "fonte": "ABESE / Revista Segurança Eletrônica",
+      "url": "https://revistasegurancaeletronica.com.br/mercado-de-portaria-remota-cresce-253-em-2025-e-acelera-uso-de-ia-na-seguranca/"
+    },
+    {
+      "titulo": "IA integrada à segurança eletrônica",
+      "descricao": "O uso de IA em soluções de segurança eletrônica saltou de 54% para 64,3% em apenas um ano, segundo a ABESE. Reconhecimento facial em condomínios cresceu 47% entre 2022 e 2024.",
+      "fonte": "ABESE / SíndicoNet",
+      "url": "https://www.sindiconet.com.br/informese/portaria-remota-portaria-presencial-manutencao-portaria-virtual"
+    },
+    {
+      "titulo": "Portaria híbrida como modelo intermediário",
+      "descricao": "34,5% das empresas de portaria remota já realizam requalificação de porteiros para o modelo híbrido, combinando presença humana com tecnologia. Essa abordagem reduz resistência de moradores e atende condomínios de grande porte.",
+      "fonte": "ABESE / Papo Condominial",
+      "url": "https://baixadasantista.papocondominial.com.br/informe-se/administracao/mercado-de-portaria-remota-preve-alta-de-30-no-brasil-ate-o-proximo-ano"
+    },
+    {
+      "titulo": "Reforma Tributária pressionando custos",
+      "descricao": "A Reforma Tributária tende a encarecer serviços de portaria presencial, somada à pressão de dissídios acima da inflação. Isso acelerará a migração para modelos remotos e híbridos nos próximos anos.",
+      "fonte": "SíndicoNet / Grupo Souza Lima",
+      "url": "https://www.sindiconet.com.br/informese/portaria-remota-portaria-presencial-manutencao-portaria-virtual"
+    },
+    {
+      "titulo": "Batalha regulatória sobre portaria remota",
+      "descricao": "A Lei 7.686/2025 do DF proíbe portaria remota em condomínios com mais de 45 unidades, gerando ADI no STF pela ABESE. Em contrapartida, Goiânia aprovou PL garantindo liberdade de adoção da portaria remota.",
+      "fonte": "SIESE-SP / Condoline / Câmara Goiânia",
+      "url": "https://www.siesesp.org.br/noticias-post/21/portaria-remota-proibida-no-df-entenda-a-lei-76862025-e-seus-impactos-no-setor-de-seguranca-eletronica"
+    }
+  ],
+  "dados_mercado": [
+    {
+      "dado": "Mercado de segurança eletrônica faturou R$ 14 bilhões com crescimento de 16,1%",
+      "fonte": "ABESE Panorama 2024/2025",
+      "url": "https://exposec.tmp.br/2025/09/25/portarias-remotas-e-a-evolucao-da-seguranca-nos-condominios-brasileiros/",
+      "ano": "2024"
+    },
+    {
+      "dado": "571.158 vigilantes em atividade no Brasil, recuperação após mínima de 485 mil em 2023",
+      "fonte": "Fenavist / Revista Fenavist Agosto 2025",
+      "url": "https://www.bibliotecadeseguranca.com.br/periodicos-de-seguranca/revista-fenavist-agosto-2025/",
+      "ano": "2025"
+    },
+    {
+      "dado": "Mais de 14 mil condomínios no Brasil já utilizam portaria remota",
+      "fonte": "ABESE / Exposec",
+      "url": "https://exposec.tmp.br/2025/09/25/portarias-remotas-e-a-evolucao-da-seguranca-nos-condominios-brasileiros/",
+      "ano": "2025"
+    },
+    {
+      "dado": "13,3 milhões de residências em condomínios no Brasil (1 em cada 8 endereços)",
+      "fonte": "IBGE Censo 2022",
+      "url": "https://www.sindiconet.com.br/informese/portaria-remota-portaria-presencial-manutencao-portaria-virtual",
+      "ano": "2024"
+    },
+    {
+      "dado": "Portaria remota reduz custos entre 40% e 60% em relação à portaria presencial 24h",
+      "fonte": "Exposec / ABESE",
+      "url": "https://exposec.tmp.br/2025/09/25/portarias-remotas-e-a-evolucao-da-seguranca-nos-condominios-brasileiros/",
+      "ano": "2025"
+    }
+  ],
+  "regulatorio": [
+    {
+      "norma": "Lei 14.967/2024 — Estatuto da Segurança Privada",
+      "resumo": "Substitui a Lei 7.102/1983 e moderniza a regulamentação do setor, exigindo autorização da Polícia Federal, capital social mínimo e criando novas profissões como operador de sistema eletrônico. Aguarda decreto regulamentador para plena eficácia.",
+      "url": "https://www12.senado.leg.br/noticias/materias/2024/09/10/estatuto-da-seguranca-privada-passa-a-vigorar-no-brasil"
+    },
+    {
+      "norma": "Lei Distrital 7.686/2025 — Restrição à portaria remota no DF",
+      "resumo": "Proíbe portaria remota em condomínios com mais de 45 unidades no Distrito Federal, exigindo adequação em 90 dias. A ABESE ajuizou ADI no STF por inconstitucionalidade, alegando violação à competência da União e à autonomia condominial.",
+      "url": "https://www.jusbrasil.com.br/legislacao/4047069297/lei-7686-25-df"
+    },
+    {
+      "norma": "PL 906/2024 — Restrição à portaria remota em São Paulo",
+      "resumo": "Projeto de lei em tramitação na Assembleia Legislativa de SP propõe proibir portaria remota em condomínios com mais de 30 unidades. Segue mesma linha restritiva do DF e é contestado pelo setor.",
+      "url": "https://www.sindiconet.com.br/informese/portaria-remota-portaria-presencial-manutencao-portaria-virtual"
+    },
+    {
+      "norma": "PL 547/2025 — Goiânia garante liberdade de portaria remota",
+      "resumo": "Aprovado na CCJ de Goiânia, assegura a condomínios a liberdade de implantar portaria remota sem exigência de porteiro presencial para obtenção de alvarás. Reconhece a portaria virtual como modalidade legítima de controle de acesso.",
+      "url": "https://www.goiania.go.leg.br/sala-de-imprensa/noticias-dos-gabinetes/Noticias-dos-Gabinetes_noticias/ccj-aprova-implementacao-de-portaria-remota-em-condominios"
+    },
+    {
+      "norma": "CCT SP — Cláusula restritiva sobre portaria virtual",
+      "resumo": "Convenções coletivas de trabalho em São Paulo incluíram cláusulas que criam entraves à adoção de portaria virtual, sendo contestadas judicialmente pelo setor de segurança eletrônica.",
+      "url": "https://www.sindiconet.com.br/informese/lei-restringe-portarias-virtuais-condominios-df-noticias-obrigacoes"
+    }
+  ],
+  "dores_contratantes": [
+    {
+      "dor": "Custo elevado de portaria presencial 24h (R$ 18 mil a R$ 24 mil/mês com encargos e múltiplos turnos)",
+      "contexto": "Síndicos e administradoras de condomínios médios e grandes",
+      "frequencia": "muito comum"
+    },
+    {
+      "dor": "Falhas humanas no controle de acesso: entrada de visitantes e entregadores sem autorização e portões deixados abertos",
+      "contexto": "Síndicos, moradores e gestores de segurança",
+      "frequencia": "muito comum"
+    },
+    {
+      "dor": "Custos ocultos com absenteísmo, passivos trabalhistas, treinamento constante e substituição de funcionários",
+      "contexto": "Síndicos, gestores de RH e administradoras",
+      "frequencia": "muito comum"
+    },
+    {
+      "dor": "Resistência de moradores à portaria remota por medo de perda da presença humana e dificuldade de adaptação tecnológica",
+      "contexto": "Síndicos que tentam aprovar modernização em assembleia",
+      "frequencia": "comum"
+    },
+    {
+      "dor": "Insegurança jurídica sobre qual modelo de portaria adotar diante de leis municipais/estaduais conflitantes com a legislação federal",
+      "contexto": "Síndicos, administradoras e empresas de segurança eletrônica",
+      "frequencia": "comum"
+    }
+  ],
+  "diferenciais_setor": [
+    {
+      "diferencial": "Central de monitoramento redundante com operação 24h e SLA de atendimento definido",
+      "descricao": "Empresas sérias operam com centrais redundantes, gravação em nuvem e garantia de tempo de resposta, enquanto amadoras dependem de estrutura única sem contingência."
+    },
+    {
+      "diferencial": "Conformidade com LGPD e protocolos de criptografia de dados biométricos",
+      "descricao": "Empresas profissionais implementam proteção rigorosa dos dados de reconhecimento facial e registros de acesso, enquanto amadoras ignoram a legislação de dados pessoais."
+    },
+    {
+      "diferencial": "Autorização da Polícia Federal e Selo ABESE de competência",
+      "descricao": "Empresas regulamentadas possuem alvará e certificações que comprovam idoneidade, diferente de empresas clandestinas que operam sem fiscalização."
+    },
+    {
+      "diferencial": "Plano de contingência para falhas de internet e energia com sistemas autônomos",
+      "descricao": "Empresas sérias oferecem nobreaks, links redundantes e procedimentos offline documentados, enquanto amadoras deixam o condomínio vulnerável em quedas."
+    },
+    {
+      "diferencial": "Requalificação profissional e modelo híbrido adaptável ao perfil do condomínio",
+      "descricao": "Empresas de referência oferecem portaria remota, híbrida e autônoma conforme diagnóstico personalizado, não impondo modelo único ao cliente."
+    }
+  ],
+  "angulos_linkedin": [
+    {
+      "titulo": "A portaria do seu condomínio ainda opera como em 1983?",
+      "angulo": "provocação — a Lei 7.102/83 levou 40 anos para ser substituída pelo Estatuto da Segurança Privada, mas muitos condomínios ainda operam com mentalidade analógica",
+      "gancho": "A lei que regulava a segurança privada no Brasil tinha 40 anos. E a forma como seu condomínio controla acessos — mudou alguma coisa nesse tempo?"
+    },
+    {
+      "titulo": "14 mil condomínios já migraram. O seu ainda resiste por quê?",
+      "angulo": "dado + tendência — usar o número ABESE para provocar reflexão sobre o custo da inércia",
+      "gancho": "Mais de 14 mil condomínios brasileiros já operam com portaria remota. A economia chega a 60%. Mas tem síndico que ainda acha que 'aqui não funciona'."
+    },
+    {
+      "titulo": "O DF proibiu portaria remota. Isso deveria preocupar todo gestor de segurança.",
+      "angulo": "opinião — a Lei 7.686/2025 do DF como sinal de alerta sobre regulação retrógrada vs. inovação tecnológica",
+      "gancho": "Uma lei no Distrito Federal acabou de proibir portaria remota em prédios com mais de 45 unidades. A ABESE foi ao STF. Mas o recado é claro: inovação sem articulação política é frágil."
+    },
+    {
+      "titulo": "Portaria não é custo. É a decisão mais estratégica do condomínio.",
+      "angulo": "reposicionamento — tirar a portaria da planilha de despesas e colocá-la como ativo de valorização e segurança",
+      "gancho": "Enquanto o síndico vê a portaria como a maior linha de custo, o mercado imobiliário já enxerga como diferencial competitivo que valoriza o m²."
+    },
+    {
+      "titulo": "De porteiro a operador de sistemas: a profissão que a IA está transformando (não eliminando)",
+      "angulo": "tendência — requalificação profissional no setor de portaria como oportunidade, não ameaça",
+      "gancho": "A portaria remota não extinguiu o porteiro. Criou o operador de sistemas, o supervisor de monitoramento e o técnico externo. A pergunta certa não é 'vai acabar o emprego?', mas 'quem está se preparando?'"
+    }
+  ],
+  "angulos_blog_autoridade": [
+    {
+      "titulo": "Portaria Remota, Híbrida ou Presencial: Guia Completo para Síndicos em 2025-2026",
+      "tipo": "guia",
+      "diferencial": "Comparação técnica com custos reais, ROI por porte de condomínio e critérios objetivos para decisão em assembleia."
+    },
+    {
+      "titulo": "Estatuto da Segurança Privada (Lei 14.967/2024): O Que Muda na Contratação de Portaria",
+      "tipo": "análise",
+      "diferencial": "Tradução prática da nova legislação para contratantes, com checklist de conformidade e riscos de contratar empresas sem autorização da PF."
+    },
+    {
+      "titulo": "Portaria Remota Proibida? O Mapa Regulatório que Todo Gestor Precisa Conhecer",
+      "tipo": "análise",
+      "diferencial": "Consolidação inédita das leis municipais e estaduais que restringem ou liberam portaria remota no Brasil, com status jurídico atualizado."
+    },
+    {
+      "titulo": "Como a IA Está Redefinindo a Segurança Condominial: Da Câmera Passiva ao Monitoramento Preditivo",
+      "tipo": "previsão",
+      "diferencial": "Dados concretos da ABESE sobre adoção de IA (64,3%) e reconhecimento facial (+47%), com projeções para 2026-2030."
+    },
+    {
+      "titulo": "Os 7 Erros Fatais na Contratação de Serviços de Portaria (e Como Blindar Seu Condomínio)",
+      "tipo": "guia",
+      "diferencial": "Baseado em dores reais de síndicos — passivos trabalhistas, falta de alvará, ausência de plano de contingência e descumprimento da LGPD."
+    }
+  ],
+  "termos_especializados": [
+    "portaria remota",
+    "portaria híbrida",
+    "controle de acesso biométrico",
+    "Estatuto da Segurança Privada",
+    "central de monitoramento 24h"
+  ],
+  "updatedAt": "2026-05-24T06:04:42.104Z"
+}
