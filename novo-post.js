@@ -453,12 +453,13 @@ async function main() {
     let contextoAgente = '';
     if (agenteDisponivel()) {
         try {
-            contextoAgente = await pesquisarContexto({
+            const resultado = await pesquisarContexto({
                 keyword: topico.keyword,
                 cidade:  topico.cidade,
                 servico: topico.servico,
                 tipo:    topico.tipo,
             });
+            contextoAgente = resultado.contexto;
         } catch(e) {
             console.warn('   ⚠️  Pesquisa Claude falhou (continuando sem contexto):', e.message);
         }

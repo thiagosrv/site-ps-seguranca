@@ -173,12 +173,13 @@ async function atualizarPostMaisAntigo() {
     let contextoAgente = '';
     if (agenteDisponivel()) {
         try {
-            contextoAgente = await pesquisarContexto({
+            const resultado = await pesquisarContexto({
                 keyword: post.keyword || post.title,
                 cidade:  post.cidade,
                 servico: post.servico,
                 tipo:    post.tipo,
             });
+            contextoAgente = resultado.contexto;
         } catch(e) {
             console.warn('   ⚠️  Pesquisa Claude falhou:', e.message);
         }

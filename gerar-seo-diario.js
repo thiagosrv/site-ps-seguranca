@@ -474,13 +474,13 @@ async function gerarPaginasSEO() {
             let contextoAgente = '';
             if (agenteDisponivel()) {
                 try {
-                    const slugAngulo2 = angulo.titulo.replace('{Servico}', servico).replace('{Cidade}', cidade);
-                    contextoAgente = await pesquisarContexto({
+                    const resultado = await pesquisarContexto({
                         keyword: `${servico.toLowerCase()} ${cidade.toLowerCase()}`,
                         cidade,
                         servico,
                         tipo: angulo.id,
                     });
+                    contextoAgente = resultado.contexto;
                 } catch(e) {
                     console.warn(`   ⚠️  Pesquisa Claude falhou:`, e.message);
                 }
