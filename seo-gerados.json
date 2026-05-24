@@ -46,5 +46,21 @@
     "angulo": "para-condominio-residencial",
     "slug": "vigia-para-condominio-residencial",
     "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-para-centro-comercial",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "para-centro-comercial",
+    "slug": "vigia-para-centro-comercial",
+    "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-com-conformidade-trabalhista",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "com-conformidade-trabalhista",
+    "slug": "vigia-com-conformidade-trabalhista",
+    "data": "2026-05-24"
   }
 ]
