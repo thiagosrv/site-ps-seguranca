@@ -58,9 +58,11 @@ async function main() {
 
     linha();
 
-    // ── Etapa 3: Banco de conhecimento (todo domingo) ───────
-    const diaSemana = new Date().getDay(); // 0=dom, 1=seg, 4=qui
-    if (diaSemana === 0) {
+    // ── Etapa 3: Banco de conhecimento (dia 1 de cada mês) ──
+    const hoje = new Date();
+    const diaSemana = hoje.getDay();   // 0=dom, 1=seg, 4=qui
+    const diaMes    = hoje.getDate();  // 1-31
+    if (diaMes === 1) {
         console.log('\n📚 [3/5] Atualizando banco de conhecimento...\n');
         try {
             await atualizarBanco();

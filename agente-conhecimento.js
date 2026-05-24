@@ -21,7 +21,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const BANCO_DIR  = path.join(__dirname, 'banco-conhecimento');
-const TTL_DIAS   = 7; // atualiza a cada 7 dias por serviço
+const TTL_DIAS   = 30; // atualiza a cada 30 dias por serviço (1 por mês)
 
 // Serviços em ordem de rotação semanal
 const SERVICOS_ROTACAO = [
@@ -87,9 +87,8 @@ async function pesquisarConhecimento(servico) {
     const client = new Anthropic({ apiKey: key });
 
     const response = await client.messages.create({
-        model: 'claude-opus-4-6',
-        max_tokens: 8000,
-        thinking: { type: 'adaptive' },
+        model: 'claude-haiku-4-5',
+        max_tokens: 3000,
         tools: [{ type: 'web_search_20250305', name: 'web_search' }],
         messages: [{
             role: 'user',

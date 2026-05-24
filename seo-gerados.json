@@ -30,5 +30,21 @@
     "angulo": "para-industria",
     "slug": "vigia-para-industria",
     "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-com-pop",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "com-pop",
+    "slug": "vigia-com-pop",
+    "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-para-condominio-residencial",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "para-condominio-residencial",
+    "slug": "vigia-para-condominio-residencial",
+    "data": "2026-05-24"
   }
 ]

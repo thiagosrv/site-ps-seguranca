@@ -18,7 +18,7 @@ const path = require('path');
 // ─── Cache config ────────────────────────────────────────
 const CACHE_DIR  = process.env.CACHE_DIR
     || path.join(__dirname, 'pesquisa-cache');
-const CACHE_TTL  = parseInt(process.env.CACHE_TTL_DIAS || '7') * 24 * 60 * 60 * 1000;
+const CACHE_TTL  = parseInt(process.env.CACHE_TTL_DIAS || '30') * 24 * 60 * 60 * 1000;
 
 function slugCache(keyword, cidade, servico) {
     return [keyword, cidade, servico]
@@ -85,9 +85,8 @@ async function pesquisarContexto({ keyword, cidade, servico, tipo }) {
     const client = getClient();
 
     const response = await client.messages.create({
-        model: 'claude-opus-4-6',
-        max_tokens: 3000,
-        thinking: { type: 'adaptive' },
+        model: 'claude-haiku-4-5',
+        max_tokens: 1500,
         tools: [{ type: 'web_search_20250305', name: 'web_search' }],
         messages: [{
             role: 'user',
