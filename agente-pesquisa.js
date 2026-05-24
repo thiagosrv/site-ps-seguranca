@@ -38,7 +38,7 @@ async function pesquisarContexto({ keyword, cidade, servico, tipo }) {
     // a Anthropic executa as buscas internamente e devolve
     // a resposta final em uma única chamada — sem loop manual.
     const response = await client.messages.create({
-        model: 'claude-opus-4-7',
+        model: 'claude-opus-4-6',
         max_tokens: 3000,
         thinking: { type: 'adaptive' },
         tools: [{ type: 'web_search_20250305', name: 'web_search' }],
