@@ -62,5 +62,21 @@
     "angulo": "com-conformidade-trabalhista",
     "slug": "vigia-com-conformidade-trabalhista",
     "data": "2026-05-24"
+  },
+  {
+    "id": "americana/vigia-implantacao-rapida",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "implantacao-rapida",
+    "slug": "vigia-implantacao-rapida",
+    "data": "2026-05-25"
+  },
+  {
+    "id": "americana/vigia-melhor-custo-beneficio",
+    "cidade": "Americana",
+    "servico": "Vigia",
+    "angulo": "melhor-custo-beneficio",
+    "slug": "vigia-melhor-custo-beneficio",
+    "data": "2026-05-25"
   }
 ]

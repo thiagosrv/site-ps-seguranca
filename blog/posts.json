@@ -78,5 +78,21 @@
     "servico": "Portaria",
     "cidade": "Americana",
     "tipo": "preco"
+  },
+  {
+    "slug": "quanto-custa-portaria-terceirizada-americana",
+    "title": "Quanto Custa Portaria Terceirizada em Americana?",
+    "meta_description": "Descubra o custo e os benefícios da portaria terceirizada em Americana.",
+    "tags": [
+      "portaria",
+      "terceirização",
+      "Americana",
+      "segurança"
+    ],
+    "date": "25 de maio de 2026",
+    "dateISO": "2026-05-25",
+    "servico": "Portaria",
+    "cidade": "Americana",
+    "tipo": "preco"
   }
 ]
