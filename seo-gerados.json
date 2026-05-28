@@ -110,5 +110,21 @@
     "angulo": "para-industria",
     "slug": "porteiro-para-industria",
     "data": "2026-05-27"
+  },
+  {
+    "id": "americana/porteiro-com-pop",
+    "cidade": "Americana",
+    "servico": "Porteiro",
+    "angulo": "com-pop",
+    "slug": "porteiro-com-pop",
+    "data": "2026-05-28"
+  },
+  {
+    "id": "americana/porteiro-para-condominio-residencial",
+    "cidade": "Americana",
+    "servico": "Porteiro",
+    "angulo": "para-condominio-residencial",
+    "slug": "porteiro-para-condominio-residencial",
+    "data": "2026-05-28"
   }
 ]
