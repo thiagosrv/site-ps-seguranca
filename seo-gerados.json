@@ -142,5 +142,21 @@
     "angulo": "com-conformidade-trabalhista",
     "slug": "porteiro-com-conformidade-trabalhista",
     "data": "2026-05-29"
+  },
+  {
+    "id": "americana/porteiro-implantacao-rapida",
+    "cidade": "Americana",
+    "servico": "Porteiro",
+    "angulo": "implantacao-rapida",
+    "slug": "porteiro-implantacao-rapida",
+    "data": "2026-06-01"
+  },
+  {
+    "id": "americana/porteiro-melhor-custo-beneficio",
+    "cidade": "Americana",
+    "servico": "Porteiro",
+    "angulo": "melhor-custo-beneficio",
+    "slug": "porteiro-melhor-custo-beneficio",
+    "data": "2026-06-01"
   }
 ]
