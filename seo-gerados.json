@@ -158,5 +158,21 @@
     "angulo": "melhor-custo-beneficio",
     "slug": "porteiro-melhor-custo-beneficio",
     "data": "2026-06-01"
+  },
+  {
+    "id": "americana/cotacao-de-portaria",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "cotacao",
+    "slug": "cotacao-de-portaria",
+    "data": "2026-06-02"
+  },
+  {
+    "id": "americana/portaria-com-supervisao-estrategica",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "supervisao-estrategica",
+    "slug": "portaria-com-supervisao-estrategica",
+    "data": "2026-06-02"
   }
 ]
