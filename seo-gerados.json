@@ -174,5 +174,21 @@
     "angulo": "supervisao-estrategica",
     "slug": "portaria-com-supervisao-estrategica",
     "data": "2026-06-02"
+  },
+  {
+    "id": "americana/portaria-24-horas",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "24-horas",
+    "slug": "portaria-24-horas",
+    "data": "2026-06-03"
+  },
+  {
+    "id": "americana/portaria-para-industria",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "para-industria",
+    "slug": "portaria-para-industria",
+    "data": "2026-06-03"
   }
 ]
