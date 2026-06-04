@@ -4,7 +4,7 @@
 
 /* H1 menor que a home (−5px no clamp) */
 .hero-band-dark h1.display-mega {
-  font-size: clamp(31px, 4.5vw, 59px) !important;
+  font-size: clamp(27px, 4.5vw, 55px) !important;
 }
 
 /* ─── Breadcrumb ──────────────────────────────────────── */
