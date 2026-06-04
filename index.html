@@ -21,17 +21,15 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
     <!-- Fonts & CSS -->
-    <!-- Fonts (non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Inter:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    <!-- LCP Image Preload -->
-    <link rel="preload" as="image" href="herosection2.webp" media="(max-width: 768px)">
-    <link rel="preload" as="image" href="herosection.webp" media="(min-width: 769px)">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap"></noscript>
+    <!-- LCP: hero images -->
+    <link rel="preload" as="image" href="carro.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
     <!-- Nav -->
@@ -60,19 +58,68 @@
 
     <!-- 1. Hero Section -->
     <header class="hero-band-dark">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="badge-pill">Desde 1998</span>
-                <h1 class="display-mega">Portaria e segurança com método, supervisão e <span class="text-primary">zero preocupações.</span></h1>
-                <p class="body-lg hero-subtitle">Há 27 anos protegendo condomínios e empresas na Região Metropolitana de Campinas com profissionais certificados e operações auditáveis.</p>
+        <!-- Texture overlays -->
+        <div class="hero-texture-lines"></div>
+
+        <div class="container hero-split">
+
+            <!-- LEFT: Text -->
+            <div class="hero-left">
+                <span class="badge-pill">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+                    Desde 1998 — 27 anos de experiência
+                </span>
+
+                <h1 class="display-mega">
+                    Portaria e segurança com método e <span class="text-primary">zero preocupações.</span>
+                </h1>
+
+                <p class="body-lg hero-subtitle">
+                    Protegemos condomínios e empresas na Região Metropolitana de Campinas com profissionais certificados, supervisão ativa e operações auditáveis.
+                </p>
+
                 <div class="hero-actions">
                     <a href="https://wa.me/5519978210246" target="_blank" rel="noopener noreferrer" class="button-pill-cta" data-tooltip="Cotação rápida sem enrolação">
-                        <span class="text-default">Solicitar Proposta Personalizada</span>
+                        <span class="text-default">Solicitar Proposta Grátis</span>
                         <span class="text-hover"><span class="pulse-dot"></span> Estamos online</span>
                     </a>
-                    <a href="#servicos" class="button-outline-on-dark">Ver Nossas Soluções</a>
+                    <a href="#servicos" class="button-outline-on-dark">Ver Serviços</a>
+                </div>
+
+                <!-- Trust signals -->
+                <div class="hero-trust">
+                    <div class="hero-trust-item">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        Conformidade trabalhista total
+                    </div>
+                    <div class="hero-trust-item">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Cobertura 24h garantida
+                    </div>
+                    <div class="hero-trust-item">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                        4.9 ★ no Google Maps
+                    </div>
                 </div>
             </div>
+
+            <!-- RIGHT: Images with Motion -->
+            <div class="hero-right">
+                <img
+                    id="hero-car"
+                    src="carro.png"
+                    alt="Viatura de rondas PS Proteção"
+                    class="hero-img-car"
+                    fetchpriority="high"
+                >
+                <img
+                    id="hero-guard"
+                    src="guarda.png"
+                    alt="Profissional de segurança PS Proteção"
+                    class="hero-img-guard"
+                >
+            </div>
+
         </div>
     </header>
 
@@ -447,5 +494,44 @@
     </a>
 
     <script src="js/main.js"></script>
+
+    <!-- Motion animations -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+    <script>
+    (function() {
+        const { animate, spring } = Motion;
+
+        // Respect prefers-reduced-motion
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReduced) {
+            document.getElementById('hero-car').style.opacity   = '1';
+            document.getElementById('hero-guard').style.opacity = '1';
+            return;
+        }
+
+        // Car slides in from bottom-right
+        animate(
+            '#hero-car',
+            { opacity: [0, 1], y: [70, 0], x: [30, 0] },
+            {
+                duration: 1.1,
+                delay: 0.2,
+                easing: spring({ stiffness: 60, damping: 18, mass: 1 })
+            }
+        );
+
+        // Guard slides in from below, after car
+        animate(
+            '#hero-guard',
+            { opacity: [0, 1], y: [90, 0] },
+            {
+                duration: 1.0,
+                delay: 1.0,
+                easing: spring({ stiffness: 70, damping: 16, mass: 1 })
+            }
+        );
+    })();
+    </script>
 </body>
 </html>
