@@ -333,8 +333,14 @@ function gerarHtml({ cidade, cidadeSlug, servico, servicoSlug, fm, sections, tod
 
   <main id="conteudo-principal">
 
-    <!-- ══ HERO (idêntico ao site principal — navy gradient + carro + guarda) ══ -->
+    <!-- ══ HERO (vídeo de fundo + carro + guarda) ══ -->
     <header class="hero-band-dark" role="banner">
+      <!-- Vídeo de fundo -->
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="/video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+
       <div class="hero-texture-lines"></div>
 
       <div class="container hero-split">

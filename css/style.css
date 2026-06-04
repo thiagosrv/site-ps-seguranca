@@ -332,8 +332,14 @@ body {
 }
 
 /* ════════════════════════════════════════════════════════
-   HERO SEO PAGES — mesmo design glass da home
+   HERO SEO PAGES — vídeo de fundo + glass cards
    ════════════════════════════════════════════════════════ */
+
+/* Z-index stack: video(0) → overlay(1) → vignette(2) → car(3) → guard(4) → text(5) */
+.hero-band-dark .hero-vignette  { z-index: 2; }
+.hero-band-dark .hero-img-car   { z-index: 3; }
+.hero-band-dark .hero-img-guard { z-index: 4; }
+.hero-band-dark .hero-split     { z-index: 5; }
 
 /* Badge glass dourado */
 .hero-band-dark .badge-pill {
