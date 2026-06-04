@@ -217,72 +217,51 @@
 
   <main id="conteudo-principal">
 
-    <!-- ══ HERO (vídeo de fundo + carro + guarda) ══ -->
-    <header class="hero-band-dark" role="banner">
-      <!-- Vídeo de fundo -->
+    <!-- ══ HERO — vídeo + centralizado (mesmo estilo da home) ══ -->
+    <header class="hero-video-bg" role="banner">
       <video class="hero-video" autoplay muted loop playsinline>
         <source src="/video.mp4" type="video/mp4">
       </video>
       <div class="hero-video-overlay"></div>
 
-      <div class="hero-texture-lines"></div>
+      <div class="hero-video-content">
+        <span class="badge-pill" style="display: inline-flex; margin-bottom: 32px;">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+          Valinhos — SP e Região
+        </span>
 
-      <div class="container hero-split">
-        <div class="hero-left">
+        <h1 class="display-mega hero-video-h1">
+          Vigia em Valinhos com método e <span class="text-primary">patrimônio protegido.</span>
+        </h1>
 
-          <span class="badge-pill">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
-            📍 Atendemos Valinhos — 27 anos de experiência
-          </span>
+        <p class="body-lg hero-subtitle" style="max-width: 620px; margin: 0 auto 44px;">Vigilância patrimonial em Valinhos com vigias treinados, rondas eletrônicas e central de apoio 24h. Proteção eficaz para condomínios e galpões.</p>
 
-          <h1 class="display-mega">
-            Vigia em Valinhos com método e <span class="text-primary">patrimônio protegido.</span>
-          </h1>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="https://wa.me/5519978210246?text=Ol%C3%A1!%20Preciso%20de%20cota%C3%A7%C3%A3o%20de%20Vigia%20em%20Valinhos"
+             target="_blank" rel="noopener noreferrer"
+             class="button-pill-cta"
+             aria-label="Solicitar cotação via WhatsApp">
+            <span class="text-default">Solicitar Cotação em Valinhos</span>
+            <span class="text-hover"><span class="pulse-dot"></span> Estamos online</span>
+          </a>
+          <a href="#beneficios" class="button-outline-on-dark">Ver Benefícios</a>
+        </div>
 
-          <p class="body-lg hero-subtitle">Vigilância patrimonial em Valinhos com vigias treinados, rondas eletrônicas e central de apoio 24h. Proteção eficaz para condomínios e galpões.</p>
-
-          <div class="hero-actions">
-            <a href="https://wa.me/5519978210246?text=Ol%C3%A1!%20Preciso%20de%20cota%C3%A7%C3%A3o%20de%20Vigia%20em%20Valinhos"
-               target="_blank" rel="noopener noreferrer"
-               class="button-pill-cta"
-               aria-label="Solicitar cotação via WhatsApp">
-              <span class="text-default">Solicitar Cotação em Valinhos</span>
-              <span class="text-hover"><span class="pulse-dot"></span> Estamos online</span>
-            </a>
-            <a href="#beneficios" class="button-outline-on-dark">Ver Benefícios</a>
+        <div class="hero-trust" style="justify-content: center; margin-top: 48px;">
+          <div class="hero-trust-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Conformidade trabalhista total
           </div>
-
-          <div class="hero-trust">
-            <div class="hero-trust-item">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-              Conformidade trabalhista total
-            </div>
-            <div class="hero-trust-item">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Cobertura 24h garantida
-            </div>
-            <div class="hero-trust-item">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
-              4.9 ★ no Google Maps
-            </div>
+          <div class="hero-trust-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Cobertura 24h garantida
           </div>
-
+          <div class="hero-trust-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            4.9 ★ no Google Maps
+          </div>
         </div>
       </div>
-
-      <!-- Vignette e imagens (mesmo do site principal) -->
-      <div class="hero-vignette"></div>
-      <img id="hero-car"
-           src="/carro.png"
-           alt="Viatura de rondas PS Proteção em Valinhos"
-           class="hero-img-car"
-           fetchpriority="high"
-           width="640" height="480">
-      <img id="hero-guard"
-           src="/guarda.png"
-           alt="Profissional de Vigia em Valinhos"
-           class="hero-img-guard"
-           width="480" height="640">
     </header>
 
     <!-- ══ BREADCRUMB (após hero) ════════════════════════════ -->
