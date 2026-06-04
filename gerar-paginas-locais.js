@@ -303,7 +303,7 @@ function gerarHtml({ cidade, cidadeSlug, servico, servicoSlug, fm, sections, tod
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css?v=6">
-  <link rel="stylesheet" href="/css/pagina-local.css?v=2">
+  <link rel="stylesheet" href="/css/pagina-local.css?v=3">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>
