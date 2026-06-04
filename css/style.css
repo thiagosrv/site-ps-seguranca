@@ -420,7 +420,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 50%;
+  width: 40%;
   max-width: none;
   object-fit: contain;
   object-position: bottom right;
@@ -434,7 +434,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 4%;
-  width: 56%;
+  width: 44%;
   max-width: none;
   object-fit: contain;
   object-position: bottom;
