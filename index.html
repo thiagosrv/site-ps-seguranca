@@ -495,60 +495,46 @@
 
     <script src="js/main.js"></script>
 
-    <!-- Motion animations -->
-    <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+    <!-- Hero image animations (CSS transitions via JS — sem dependência externa) -->
     <script>
     (function() {
         var carEl   = document.getElementById('hero-car');
         var guardEl = document.getElementById('hero-guard');
 
-        // Fallback: mostra as imagens caso Motion falhe
-        function showFallback() {
-            if (carEl)   carEl.style.opacity   = '1';
-            if (guardEl) guardEl.style.opacity = '1';
+        if (!carEl || !guardEl) return;
+
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (reduced) {
+            carEl.style.opacity   = '1';
+            guardEl.style.opacity = '1';
+            return;
         }
 
-        if (!carEl || !guardEl || typeof Motion === 'undefined') {
-            return showFallback();
-        }
+        // Easing expo-out (visual de mola)
+        var ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
 
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return showFallback();
-        }
+        // Estado inicial
+        carEl.style.opacity   = '0';
+        carEl.style.transform = 'translateY(80px) translateX(40px)';
 
-        try {
-            var animate = Motion.animate;
+        guardEl.style.opacity   = '0';
+        guardEl.style.transform = 'translateY(100px)';
 
-            // Easing expo-out (visual de mola sem spring API)
-            var easing = [0.16, 1, 0.3, 1];
+        // Carro entra após 200ms
+        setTimeout(function() {
+            carEl.style.transition = 'opacity 1.1s ' + ease + ', transform 1.1s ' + ease;
+            carEl.style.opacity    = '1';
+            carEl.style.transform  = 'translateY(0px) translateX(0px)';
+        }, 200);
 
-            // Carro: entra de baixo-direita
-            animate(carEl,
-                {
-                    opacity:   [0, 1],
-                    transform: [
-                        'translateY(80px) translateX(40px)',
-                        'translateY(0px)  translateX(0px)'
-                    ]
-                },
-                { duration: 1.1, delay: 0.15, easing: easing }
-            );
+        // Guarda entra após 1050ms (depois do carro)
+        setTimeout(function() {
+            guardEl.style.transition = 'opacity 1.0s ' + ease + ', transform 1.0s ' + ease;
+            guardEl.style.opacity    = '1';
+            guardEl.style.transform  = 'translateY(0px)';
+        }, 1050);
 
-            // Guarda: entra de baixo, após o carro
-            animate(guardEl,
-                {
-                    opacity:   [0, 1],
-                    transform: [
-                        'translateY(100px)',
-                        'translateY(0px)'
-                    ]
-                },
-                { duration: 1.0, delay: 1.05, easing: easing }
-            );
-
-        } catch(e) {
-            showFallback();
-        }
     })();
     </script>
 </body>
