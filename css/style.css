@@ -295,7 +295,7 @@ body {
 /* Split layout — texto na esquerda, imagens flutuam livres no hero */
 .hero-split {
   position: relative;
-  z-index: 2;
+  z-index: 4; /* acima do vignette (3) e das imagens (1,2) */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -401,6 +401,19 @@ body {
   font-weight: 500;
 }
 .hero-trust-item svg { color: #FEBE00; flex-shrink: 0; }
+
+/* Vignette: escurece borda direita + canto inferior (onde o carro flutua) */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    /* borda direita — funde o carro no fundo */
+    linear-gradient(to left,  rgba(4, 8, 20, 0.82) 0%, rgba(4, 8, 20, 0.3) 28%, transparent 52%),
+    /* base inferior — chão do hero */
+    linear-gradient(to top,   rgba(4, 8, 20, 0.80) 0%, rgba(4, 8, 20, 0.2) 22%, transparent 45%);
+  z-index: 3;
+  pointer-events: none;
+}
 
 /* Hero images: absolute relativo ao header.hero-band-dark — sem clip, sem corte */
 .hero-img-car {
