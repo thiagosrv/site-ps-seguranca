@@ -499,38 +499,56 @@
     <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
     <script>
     (function() {
-        const { animate, spring } = Motion;
+        var carEl   = document.getElementById('hero-car');
+        var guardEl = document.getElementById('hero-guard');
 
-        // Respect prefers-reduced-motion
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (prefersReduced) {
-            document.getElementById('hero-car').style.opacity   = '1';
-            document.getElementById('hero-guard').style.opacity = '1';
-            return;
+        // Fallback: mostra as imagens caso Motion falhe
+        function showFallback() {
+            if (carEl)   carEl.style.opacity   = '1';
+            if (guardEl) guardEl.style.opacity = '1';
         }
 
-        // Car slides in from bottom-right
-        animate(
-            '#hero-car',
-            { opacity: [0, 1], y: [70, 0], x: [30, 0] },
-            {
-                duration: 1.1,
-                delay: 0.2,
-                easing: spring({ stiffness: 60, damping: 18, mass: 1 })
-            }
-        );
+        if (!carEl || !guardEl || typeof Motion === 'undefined') {
+            return showFallback();
+        }
 
-        // Guard slides in from below, after car
-        animate(
-            '#hero-guard',
-            { opacity: [0, 1], y: [90, 0] },
-            {
-                duration: 1.0,
-                delay: 1.0,
-                easing: spring({ stiffness: 70, damping: 16, mass: 1 })
-            }
-        );
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return showFallback();
+        }
+
+        try {
+            var animate = Motion.animate;
+
+            // Easing expo-out (visual de mola sem spring API)
+            var easing = [0.16, 1, 0.3, 1];
+
+            // Carro: entra de baixo-direita
+            animate(carEl,
+                {
+                    opacity:   [0, 1],
+                    transform: [
+                        'translateY(80px) translateX(40px)',
+                        'translateY(0px)  translateX(0px)'
+                    ]
+                },
+                { duration: 1.1, delay: 0.15, easing: easing }
+            );
+
+            // Guarda: entra de baixo, após o carro
+            animate(guardEl,
+                {
+                    opacity:   [0, 1],
+                    transform: [
+                        'translateY(100px)',
+                        'translateY(0px)'
+                    ]
+                },
+                { duration: 1.0, delay: 1.05, easing: easing }
+            );
+
+        } catch(e) {
+            showFallback();
+        }
     })();
     </script>
 </body>
