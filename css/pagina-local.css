@@ -1,58 +1,187 @@
-/* ═══════════════════════════════════════
-   Páginas Locais (serviço × cidade)
-   ═══════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   pagina-local.css — Páginas Locais SEO (serviço × cidade)
+   ═══════════════════════════════════════════════════════ */
 
-/* Hero da página local */
-.local-hero {
-  background: linear-gradient(135deg, #06101F 0%, #0D1B38 40%, #162B52 70%, #08131F 100%);
-  padding: 140px 0 80px;
-  color: white;
-}
-
-/* Grid 2 colunas: intro + CTA box */
-.local-2col {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 64px;
-  align-items: start;
-}
-
-/* Card CTA lateral */
-.local-cta-box {
-  background: white;
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 96px;
-}
-
-/* Intenções de busca em chips */
-.local-intencoes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 24px 0;
-}
-.intencao-card {
-  background: white;
-  border: 1px solid var(--hairline);
-  border-radius: 9999px;
-  padding: 8px 20px;
+/* ─── Breadcrumb ──────────────────────────────────────── */
+.breadcrumb-nav {
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--hairline);
+  padding: 10px 0;
   font-size: 13px;
   color: var(--ink-muted);
 }
-
-/* Lista de benefícios */
-.local-beneficios ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
-.local-beneficios li {
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* ─── Hero Local ──────────────────────────────────────── */
+.local-hero {
+  background:
+    linear-gradient(135deg, #06101F 0%, #0D1B38 40%, #162B52 70%, #08131F 100%);
+  padding: 100px 0 72px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.local-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+}
+.local-badge {
+  display: inline-block;
+  background: rgba(254,190,0,.15);
+  color: #FEBE00;
+  border: 1px solid rgba(254,190,0,.3);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.local-h1 {
+  color: #fff !important;
+  margin-bottom: 18px;
+}
+.local-subtitulo {
+  color: rgba(255,255,255,.75);
+  max-width: 620px;
+  margin-bottom: 36px;
+  line-height: 1.75;
+}
+.local-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.btn-wa {
+  background: #25D366;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.btn-wa:hover { background: #1ebe59; }
+.btn-tel {
+  border: 2px solid rgba(255,255,255,.35);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.btn-tel:hover { background: rgba(255,255,255,.1); }
+
+.local-trust {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+}
+
+/* ─── Chips de intenção ───────────────────────────────── */
+.local-chips-section { padding: 20px 0; }
+.local-chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.local-chips li {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 7px 18px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  cursor: default;
+}
+
+/* ─── Layout 2 colunas (intro + CTA) ─────────────────── */
+.local-2col {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 64px;
+  align-items: start;
+}
+.local-cta-box {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.08);
+  position: sticky;
+  top: 96px;
+}
+.local-cta-box h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.local-cta-box p {
+  color: var(--ink-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.local-cta-btn {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 16px;
+  border-radius: 9999px;
+}
+.local-cta-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  justify-content: center;
+}
+
+/* ─── Benefícios ──────────────────────────────────────── */
+.local-beneficios-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.local-beneficios-grid li {
   background: white;
   border: 1px solid var(--hairline);
   border-left: 4px solid #FEBE00;
@@ -60,47 +189,89 @@
   padding: 16px 20px;
   font-size: 15px;
   color: var(--ink);
+  line-height: 1.5;
 }
 
-/* Diferenciais (fundo escuro) */
-.local-diferenciais ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+/* ─── Diferenciais (fundo escuro) ────────────────────── */
+.local-diferenciais-grid {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
-.local-diferenciais li {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+.local-diferenciais-grid li {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 8px;
   padding: 16px 20px;
   font-size: 15px;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,.85);
+  line-height: 1.5;
 }
 
-/* FAQ */
+/* ─── FAQ ─────────────────────────────────────────────── */
+.faq-lista { border-top: 1px solid var(--hairline); }
 .faq-item {
   border-bottom: 1px solid var(--hairline);
   padding: 24px 0;
 }
-.faq-item:last-child { border-bottom: none; }
 .faq-pergunta {
   font-family: var(--font-heading);
   font-size: 17px;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
-.faq-resposta {
+.faq-resposta p {
   color: var(--ink-muted);
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 15px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .local-2col { grid-template-columns: 1fr; }
+/* ─── Links internos (outros serviços) ───────────────── */
+.intlink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.intlink-card {
+  display: block;
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.intlink-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  color: var(--primary);
+}
+
+/* ─── CTA Final ───────────────────────────────────────── */
+.cta-final-section {
+  background: var(--surface-1);
+  padding: 80px 0;
+}
+
+/* ─── Responsivo ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .local-2col {
+    grid-template-columns: 1fr;
+  }
   .local-cta-box { position: static; }
-  .local-hero { padding: 120px 0 60px; }
+}
+@media (max-width: 600px) {
+  .local-hero     { padding: 90px 0 56px; }
+  .local-ctas     { flex-direction: column; }
+  .btn-wa, .btn-tel { text-align: center; }
+  .local-trust    { gap: 12px; }
+  .local-chips li { font-size: 12px; }
 }

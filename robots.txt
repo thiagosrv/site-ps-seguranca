@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Bloqueia arquivos desnecessários para rastreamento
+Disallow: /node_modules/
+Disallow: /conteudo/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://protecaoamericana.com.br/sitemap.xml
