@@ -419,8 +419,8 @@ body {
 .hero-img-car {
   position: absolute;
   bottom: 0;
-  right: 1%;            /* alinhado com o guarda */
-  width: 78%;           /* +40% — carro imponente */
+  right: 0;
+  width: 50%;
   max-width: none;
   object-fit: contain;
   object-position: bottom right;
@@ -433,8 +433,8 @@ body {
 .hero-img-guard {
   position: absolute;
   bottom: 0;
-  right: 6%;            /* alinhado com carro, guarda na frente */
-  width: 81%;           /* +40% — guarda imponente */
+  right: 4%;
+  width: 56%;
   max-width: none;
   object-fit: contain;
   object-position: bottom;
