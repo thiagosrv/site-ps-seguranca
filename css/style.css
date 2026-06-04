@@ -313,18 +313,18 @@ body {
   z-index: 4; /* acima do asfalto (z:3) e das imagens (z:1,2) */
 }
 
-/* Asfalto: gradiente escuro no chão do hero */
+/* Asfalto: gradiente no chão do hero */
 .hero-asphalt {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 160px;
+  height: 180px;
   background: linear-gradient(
     to top,
-    rgba(3, 7, 14, 0.92) 0%,
-    rgba(3, 7, 14, 0.55) 35%,
-    rgba(3, 7, 14, 0.15) 65%,
+    #000000 0%,
+    rgba(0, 0, 0, 0.75) 25%,
+    rgba(0, 0, 0, 0.35) 55%,
     transparent 100%
   );
   z-index: 3;
