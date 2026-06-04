@@ -259,9 +259,9 @@ body {
   inset: 0;
   background:
     linear-gradient(to bottom,
-      rgba(6,16,31,0.45) 0%,
-      rgba(6,16,31,0.60) 55%,
-      rgba(6,16,31,0.88) 100%);
+      rgba(6,16,31,0.55) 0%,
+      rgba(6,16,31,0.70) 55%,
+      rgba(6,16,31,0.92) 100%);
   z-index: 1;
 }
 
@@ -280,6 +280,19 @@ body {
   line-height: 1.05 !important;
   letter-spacing: -2px !important;
   margin-bottom: 28px !important;
+  color: #ffffff !important;
+  text-shadow:
+    0 2px 24px rgba(0,0,0,0.55),
+    0 1px 4px  rgba(0,0,0,0.40);
+}
+
+/* Destaque amarelo com leve glow dourado */
+.hero-video-h1 .text-primary {
+  color: #FEBE00 !important;
+  text-shadow:
+    0 0 32px rgba(254,190,0,0.45),
+    0 2px 16px rgba(0,0,0,0.40);
+  font-style: italic;
 }
 
 /* ═══════════════════════════════════════════
