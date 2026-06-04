@@ -1,0 +1,65 @@
+name: Automação SEO Diária
+
+# ─────────────────────────────────────────────
+# Roda todo dia às 08:00 BRT (11:00 UTC)
+# Pode ser disparado manualmente pelo GitHub UI
+# ─────────────────────────────────────────────
+
+on:
+  schedule:
+    - cron: '0 11 * * *'   # 08:00 BRT = 11:00 UTC (segunda a domingo)
+  workflow_dispatch:        # botão "Run workflow" na aba Actions do GitHub
+
+permissions:
+  contents: write           # necessário para git push
+
+jobs:
+  automacao:
+    name: Gerar conteúdo e publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 30     # limite de segurança
+
+    steps:
+
+      # 1. Checkout com token para permitir git push
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      # 2. Node.js 20
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Instalar dependências
+      - name: Instalar dependências
+        run: npm ci
+
+      # 4. Configurar identidade do git (commit aparece como "PS Proteção Bot")
+      - name: Configurar Git
+        run: |
+          git config user.name "PS Proteção Bot"
+          git config user.email "bot@protecaoamericana.com.br"
+
+      # 5. Rodar a automação completa
+      #    - Gera blog post (Claude + OpenAI)
+      #    - Gera páginas SEO
+      #    - Atualiza banco de conhecimento (dia 1 do mês)
+      #    - Atualiza post antigo (segunda e quinta)
+      #    - Git push → Vercel auto-deploya
+      - name: Rodar automação
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node automatizar.js
+
+      # 6. Log de conclusão
+      - name: Resumo
+        if: always()
+        run: |
+          echo "✅ Automação concluída em $(date -u '+%Y-%m-%d %H:%M UTC')"
+          echo "   Deploy no Vercel iniciado automaticamente após o git push."
