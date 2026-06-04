@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════
+   Páginas Locais (serviço × cidade)
+   ═══════════════════════════════════════ */
+
+/* Hero da página local */
+.local-hero {
+  background: linear-gradient(135deg, #06101F 0%, #0D1B38 40%, #162B52 70%, #08131F 100%);
+  padding: 140px 0 80px;
+  color: white;
+}
+
+/* Grid 2 colunas: intro + CTA box */
+.local-2col {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Card CTA lateral */
+.local-cta-box {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 96px;
+}
+
+/* Intenções de busca em chips */
+.local-intencoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 0;
+}
+.intencao-card {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 8px 20px;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+/* Lista de benefícios */
+.local-beneficios ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.local-beneficios li {
+  background: white;
+  border: 1px solid var(--hairline);
+  border-left: 4px solid #FEBE00;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+/* Diferenciais (fundo escuro) */
+.local-diferenciais ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.local-diferenciais li {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--hairline);
+  padding: 24px 0;
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-pergunta {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.faq-resposta {
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .local-2col { grid-template-columns: 1fr; }
+  .local-cta-box { position: static; }
+  .local-hero { padding: 120px 0 60px; }
+}
