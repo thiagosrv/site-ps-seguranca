@@ -313,22 +313,27 @@ body {
   z-index: 4; /* acima do asfalto (z:3) e das imagens (z:1,2) */
 }
 
-/* Asfalto: gradiente no chão do hero */
+/* Asfalto: foto real no canto inferior direito */
 .hero-asphalt {
   position: absolute;
   bottom: 0;
-  left: 0;
   right: 0;
-  height: 180px;
-  background: linear-gradient(
-    to top,
-    #000000 0%,
-    rgba(0, 0, 0, 0.75) 25%,
-    rgba(0, 0, 0, 0.35) 55%,
-    transparent 100%
-  );
+  width: 62%;
+  height: 170px;
+  background-image: url('../asfalto.jpg');
+  background-size: cover;
+  background-position: center top;
   z-index: 3;
   pointer-events: none;
+  /* Fade: some nas bordas esquerda e superior */
+  -webkit-mask-image:
+    linear-gradient(to right,  transparent 0%, black 22%),
+    linear-gradient(to bottom, transparent 0%, black 35%);
+  mask-image:
+    linear-gradient(to right,  transparent 0%, black 22%),
+    linear-gradient(to bottom, transparent 0%, black 35%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 /* Badge */
