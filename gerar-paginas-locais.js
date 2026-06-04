@@ -17,6 +17,40 @@
 const fs   = require('fs');
 const path = require('path');
 
+// ─── Copy do hero por serviço ────────────────────────────────
+// h1_destaque: texto amarelo no final do H1
+// subtitulo: parágrafo abaixo do H1 (usa {cidade})
+const HERO_COPY = {
+    'portaria-controle-acesso': {
+        h1_destaque: 'zero preocupações.',
+        subtitulo: 'Portaria profissional em {cidade} com porteiros treinados, supervisão ativa 24h e conformidade trabalhista total. Proposta em até 24 horas.'
+    },
+    'limpeza': {
+        h1_destaque: 'ambientes impecáveis.',
+        subtitulo: 'Limpeza terceirizada em {cidade} com profissionais treinados, fornecimento de materiais e supervisão periódica. Atendemos condomínios e empresas.'
+    },
+    'jardinagem': {
+        h1_destaque: 'áreas verdes perfeitas.',
+        subtitulo: 'Jardinagem e manutenção de áreas verdes em {cidade} com profissionais especializados, cronograma definido e relatório fotográfico mensal.'
+    },
+    'zeladoria': {
+        h1_destaque: 'gestão sem burocracia.',
+        subtitulo: 'Zeladoria terceirizada em {cidade} com zeladores experientes, gestão completa de folha e substituição garantida. Zero passivo trabalhista para você.'
+    },
+    'vigia': {
+        h1_destaque: 'patrimônio protegido.',
+        subtitulo: 'Vigilância patrimonial em {cidade} com vigias treinados, rondas eletrônicas e central de apoio 24h. Proteção eficaz para condomínios e galpões.'
+    },
+    'rondas-de-seguranca': {
+        h1_destaque: 'segurança sem custo fixo.',
+        subtitulo: 'Rondas de segurança em {cidade} com equipes motorizadas, registro eletrônico por ponto e relatório após cada turno. Custo menor que um posto fixo.'
+    },
+    'seguranca': {
+        h1_destaque: 'proteção de verdade.',
+        subtitulo: 'Segurança patrimonial em {cidade} com vigilantes registrados, postos fixos ou rondas e supervisão ativa. Conformidade total com a Lei 7.102/83.'
+    },
+};
+
 // ─── Config ──────────────────────────────────────────────────
 const SITE_URL     = 'https://protecaoamericana.com.br';
 const EMPRESA      = 'PS Proteção';
@@ -104,9 +138,15 @@ function gerarHtml({ cidade, cidadeSlug, servico, servicoSlug, fm, sections, tod
     const benefText = render(sections.beneficios    || '', c, s);
     const faqMdText = render(sections.faq           || '', c, s);
 
-    const h1        = `Empresa de ${s} em ${c}`;
-    const titleTag  = `${h1} | Cotação e Orçamento | ${EMPRESA}`;
-    const canonUrl  = `${SITE_URL}/servicos/${servicoSlug}/${cidadeSlug}/`;
+    const h1       = `${s} em ${c}`;
+    const heroCopy = HERO_COPY[servicoSlug] || {
+        h1_destaque: 'zero preocupações.',
+        subtitulo:   `${s} profissional em {cidade} com método, supervisão ativa e conformidade trabalhista total.`
+    };
+    const h1Destaque  = heroCopy.h1_destaque;
+    const heroSub     = render(heroCopy.subtitulo, c, s);
+    const titleTag    = `Empresa de ${h1} | Cotação e Orçamento | ${EMPRESA}`;
+    const canonUrl    = `${SITE_URL}/servicos/${servicoSlug}/${cidadeSlug}/`;
 
     // FAQs: marketing local + específicas do .md
     const faqsLoc = faqsLocais(servicoSlug, c, s);
@@ -291,67 +331,91 @@ function gerarHtml({ cidade, cidadeSlug, servico, servicoSlug, fm, sections, tod
     </div>
   </nav>
 
-  <!-- ══ BREADCRUMB ════════════════════════════════════════ -->
-  <nav class="breadcrumb-nav" aria-label="Navegação estrutural">
-    <div class="container">
-      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/" itemprop="item"><span itemprop="name">Início</span></a>
-          <meta itemprop="position" content="1">
-        </li>
-        <li aria-hidden="true">›</li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/servicos/" itemprop="item"><span itemprop="name">Serviços</span></a>
-          <meta itemprop="position" content="2">
-        </li>
-        <li aria-hidden="true">›</li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/servicos/${servicoSlug}/" itemprop="item"><span itemprop="name">${s}</span></a>
-          <meta itemprop="position" content="3">
-        </li>
-        <li aria-hidden="true">›</li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <span itemprop="name">${c}</span>
-          <meta itemprop="position" content="4">
-        </li>
-      </ol>
-    </div>
-  </nav>
-
   <main id="conteudo-principal">
 
-    <!-- ══ HERO LOCAL ════════════════════════════════════════ -->
-    <header class="local-hero" role="banner">
-      <div class="container">
-        <p class="local-badge">📍 Atendemos ${c} e região</p>
-        <h1 class="display-lg local-h1">${h1}</h1>
-        <p class="body-lg local-subtitulo">
-          Solicite <strong>cotação de ${s} em ${c}</strong> com a PS Proteção —
-          27 anos de experiência, profissionais certificados e supervisão ativa 24h.
-          Proposta em até 24 horas, sem compromisso.
-        </p>
+    <!-- ══ HERO (idêntico ao site principal — navy gradient + carro + guarda) ══ -->
+    <header class="hero-band-dark" role="banner">
+      <div class="hero-texture-lines"></div>
 
-        <!-- CTAs -->
-        <div class="local-ctas">
-          <a href="https://wa.me/${TELEFONE_WA}?text=Ol%C3%A1!%20Preciso%20de%20or%C3%A7amento%20de%20${encodeURIComponent(s)}%20em%20${encodeURIComponent(c)}"
-             target="_blank" rel="noopener noreferrer"
-             class="btn-wa" aria-label="Solicitar orçamento via WhatsApp">
-            Solicitar Orçamento Grátis
-          </a>
-          <a href="tel:+${TELEFONE_WA}" class="btn-tel" aria-label="Ligar para PS Proteção">
-            ${TELEFONE}
-          </a>
+      <div class="container hero-split">
+        <div class="hero-left">
+
+          <span class="badge-pill">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+            📍 Atendemos ${c} — 27 anos de experiência
+          </span>
+
+          <h1 class="display-mega">
+            ${h1} com método e <span class="text-primary">${h1Destaque}</span>
+          </h1>
+
+          <p class="body-lg hero-subtitle">${heroSub}</p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/${TELEFONE_WA}?text=Ol%C3%A1!%20Preciso%20de%20cota%C3%A7%C3%A3o%20de%20${encodeURIComponent(s)}%20em%20${encodeURIComponent(c)}"
+               target="_blank" rel="noopener noreferrer"
+               class="button-pill-cta"
+               aria-label="Solicitar cotação via WhatsApp">
+              <span class="text-default">Solicitar Cotação em ${c}</span>
+              <span class="text-hover"><span class="pulse-dot"></span> Estamos online</span>
+            </a>
+            <a href="#beneficios" class="button-outline-on-dark">Ver Benefícios</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              Conformidade trabalhista total
+            </div>
+            <div class="hero-trust-item">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Cobertura 24h garantida
+            </div>
+            <div class="hero-trust-item">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+              4.9 ★ no Google Maps
+            </div>
+          </div>
+
         </div>
-
-        <!-- Trust signals -->
-        <ul class="local-trust" aria-label="Credenciais da empresa">
-          <li>✅ 27 anos de experiência</li>
-          <li>✅ Conformidade trabalhista total</li>
-          <li>✅ Cobertura 24h garantida</li>
-          <li>⭐ 4.9 no Google Maps (53 avaliações)</li>
-        </ul>
       </div>
+
+      <!-- Vignette e imagens (mesmo do site principal) -->
+      <div class="hero-vignette"></div>
+      <img id="hero-car"
+           src="/carro.png"
+           alt="Viatura de rondas PS Proteção em ${c}"
+           class="hero-img-car"
+           fetchpriority="high"
+           width="640" height="480">
+      <img id="hero-guard"
+           src="/guarda.png"
+           alt="Profissional de ${s} em ${c}"
+           class="hero-img-guard"
+           width="480" height="640">
     </header>
+
+    <!-- ══ BREADCRUMB (após hero) ════════════════════════════ -->
+    <nav class="breadcrumb-nav" aria-label="Navegação estrutural">
+      <div class="container">
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item"><span itemprop="name">Início</span></a>
+            <meta itemprop="position" content="1">
+          </li>
+          <li aria-hidden="true">›</li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/servicos/${servicoSlug}/" itemprop="item"><span itemprop="name">${s}</span></a>
+            <meta itemprop="position" content="2">
+          </li>
+          <li aria-hidden="true">›</li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">${c}</span>
+            <meta itemprop="position" content="3">
+          </li>
+        </ol>
+      </div>
+    </nav>
 
     <!-- ══ INTENÇÕES DE BUSCA (chips visíveis) ════════════════ -->
     <section class="section-surface local-chips-section" aria-label="Palavras-chave relacionadas">
@@ -519,6 +583,32 @@ function gerarHtml({ cidade, cidadeSlug, servico, servicoSlug, fm, sections, tod
   </a>
 
   <script src="/js/main.js" defer></script>
+
+  <!-- Animação hero: carro entra primeiro, guarda depois (CSS transitions) -->
+  <script>
+  (function() {
+    var carEl   = document.getElementById('hero-car');
+    var guardEl = document.getElementById('hero-guard');
+    if (!carEl || !guardEl) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) { carEl.style.opacity = '1'; guardEl.style.opacity = '1'; return; }
+    var ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
+    carEl.style.opacity   = '0';
+    carEl.style.transform = 'translateY(80px) translateX(40px)';
+    guardEl.style.opacity   = '0';
+    guardEl.style.transform = 'translateY(100px)';
+    setTimeout(function() {
+      carEl.style.transition = 'opacity 1.1s ' + ease + ', transform 1.1s ' + ease;
+      carEl.style.opacity    = '1';
+      carEl.style.transform  = 'translateY(0px) translateX(0px)';
+    }, 200);
+    setTimeout(function() {
+      guardEl.style.transition = 'opacity 1.0s ' + ease + ', transform 1.0s ' + ease;
+      guardEl.style.opacity    = '1';
+      guardEl.style.transform  = 'translateY(0px)';
+    }, 1050);
+  })();
+  </script>
 </body>
 </html>`;
 }
