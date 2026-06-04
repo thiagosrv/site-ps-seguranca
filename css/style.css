@@ -295,6 +295,42 @@ body {
   font-style: italic;
 }
 
+/* ── Badge glass pill (hero vídeo) ────────────────────── */
+.hero-video-content .badge-pill {
+  background: rgba(254,190,0,0.13);
+  border: 1px solid rgba(254,190,0,0.40);
+  color: #FEBE00;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 99px;
+  text-shadow: none;
+  box-shadow: 0 4px 24px rgba(254,190,0,0.12);
+}
+
+.hero-video-content .badge-pill svg {
+  color: #FEBE00;
+}
+
+/* ── Subtitle glass card (hero vídeo) ─────────────────── */
+.hero-video-content .hero-subtitle {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 20px 32px;
+  color: rgba(255,255,255,0.88) !important;
+  font-size: 17px;
+  line-height: 1.65;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
 /* ═══════════════════════════════════════════
    HERO — Navy Gradient + Texture + Split
    ═══════════════════════════════════════════ */
