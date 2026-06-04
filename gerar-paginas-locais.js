@@ -302,7 +302,7 @@ function gerarHtml({ cidade, cidadeSlug, servico, servicoSlug, fm, sections, tod
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap"></noscript>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/style.css?v=6">
   <link rel="stylesheet" href="/css/pagina-local.css?v=2">
 
   <!-- Schema.org JSON-LD -->
