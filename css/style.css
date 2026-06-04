@@ -408,9 +408,9 @@ body {
   inset: 0;
   background:
     /* borda direita — funde o carro no fundo */
-    linear-gradient(to left,  rgba(4, 8, 20, 0.82) 0%, rgba(4, 8, 20, 0.3) 28%, transparent 52%),
+    linear-gradient(to left,  rgba(2, 5, 14, 1.0) 0%, rgba(2, 5, 14, 0.7) 25%, rgba(2, 5, 14, 0.2) 50%, transparent 70%),
     /* base inferior — chão do hero */
-    linear-gradient(to top,   rgba(4, 8, 20, 0.80) 0%, rgba(4, 8, 20, 0.2) 22%, transparent 45%);
+    linear-gradient(to top,   rgba(2, 5, 14, 1.0) 0%, rgba(2, 5, 14, 0.6) 25%, rgba(2, 5, 14, 0.1) 50%, transparent 65%);
   z-index: 0; /* abaixo das imagens (car:1, guard:2) */
   pointer-events: none;
 }
