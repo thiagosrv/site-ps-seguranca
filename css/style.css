@@ -411,7 +411,7 @@ body {
     linear-gradient(to left,  rgba(4, 8, 20, 0.82) 0%, rgba(4, 8, 20, 0.3) 28%, transparent 52%),
     /* base inferior — chão do hero */
     linear-gradient(to top,   rgba(4, 8, 20, 0.80) 0%, rgba(4, 8, 20, 0.2) 22%, transparent 45%);
-  z-index: 3;
+  z-index: 0; /* abaixo das imagens (car:1, guard:2) */
   pointer-events: none;
 }
 
