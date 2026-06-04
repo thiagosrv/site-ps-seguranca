@@ -419,22 +419,22 @@ body {
 .hero-img-car {
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 56%;           /* cobre bem o lado direito do hero */
+  right: 1%;            /* alinhado com o guarda */
+  width: 78%;           /* +40% — carro imponente */
   max-width: none;
   object-fit: contain;
   object-position: bottom right;
   opacity: 0;
   z-index: 1;
-  will-change: transform, opacity;
+  will-change: transform, opacity, filter;
   filter: drop-shadow(0 40px 100px rgba(0,0,0,0.55));
 }
 
 .hero-img-guard {
   position: absolute;
   bottom: 0;
-  right: 5%;            /* ligeiramente afastado da borda */
-  width: 58%;           /* bem maior — guarda imponente */
+  right: 6%;            /* alinhado com carro, guarda na frente */
+  width: 81%;           /* +40% — guarda imponente */
   max-width: none;
   object-fit: contain;
   object-position: bottom;
