@@ -406,7 +406,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 58%;           /* cobre bem o lado direito do hero */
+  width: 44%;           /* cobre bem o lado direito do hero */
   max-width: none;
   object-fit: contain;
   object-position: bottom right;
@@ -420,7 +420,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 5%;            /* ligeiramente afastado da borda */
-  width: 36%;           /* bem maior — guarda imponente */
+  width: 45%;           /* bem maior — guarda imponente */
   max-width: none;
   object-fit: contain;
   object-position: bottom;
