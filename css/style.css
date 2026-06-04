@@ -331,6 +331,64 @@ body {
     inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
+/* ════════════════════════════════════════════════════════
+   HERO SEO PAGES — mesmo design glass da home
+   ════════════════════════════════════════════════════════ */
+
+/* Badge glass dourado */
+.hero-band-dark .badge-pill {
+  background: rgba(254,190,0,0.13);
+  border: 1px solid rgba(254,190,0,0.40);
+  color: #FEBE00;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 99px;
+  text-shadow: none;
+  box-shadow: 0 4px 24px rgba(254,190,0,0.12);
+}
+
+.hero-band-dark .badge-pill svg {
+  color: #FEBE00;
+}
+
+/* H1: text-shadow para legibilidade no gradiente escuro */
+.hero-band-dark h1.display-mega {
+  color: #ffffff;
+  text-shadow:
+    0 2px 24px rgba(0,0,0,0.55),
+    0 1px 4px  rgba(0,0,0,0.40);
+}
+
+/* Destaque amarelo italic + glow no H1 das páginas SEO */
+.hero-band-dark h1.display-mega .text-primary {
+  color: #FEBE00 !important;
+  text-shadow:
+    0 0 32px rgba(254,190,0,0.45),
+    0 2px 16px rgba(0,0,0,0.40);
+  font-style: italic;
+}
+
+/* Subtitle glass card */
+.hero-band-dark .hero-subtitle {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 18px 28px;
+  color: rgba(255,255,255,0.88) !important;
+  font-size: 16px;
+  line-height: 1.65;
+  margin-top: 4px;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
 /* ═══════════════════════════════════════════
    HERO — Navy Gradient + Texture + Split
    ═══════════════════════════════════════════ */
