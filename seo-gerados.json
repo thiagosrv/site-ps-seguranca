@@ -206,5 +206,21 @@
     "angulo": "para-condominio-residencial",
     "slug": "portaria-para-condominio-residencial",
     "data": "2026-06-04"
+  },
+  {
+    "id": "americana/portaria-para-centro-comercial",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "para-centro-comercial",
+    "slug": "portaria-para-centro-comercial",
+    "data": "2026-06-06"
+  },
+  {
+    "id": "americana/portaria-com-conformidade-trabalhista",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "com-conformidade-trabalhista",
+    "slug": "portaria-com-conformidade-trabalhista",
+    "data": "2026-06-06"
   }
 ]
