@@ -222,5 +222,21 @@
     "angulo": "com-conformidade-trabalhista",
     "slug": "portaria-com-conformidade-trabalhista",
     "data": "2026-06-06"
+  },
+  {
+    "id": "americana/portaria-implantacao-rapida",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "implantacao-rapida",
+    "slug": "portaria-implantacao-rapida",
+    "data": "2026-06-07"
+  },
+  {
+    "id": "americana/portaria-melhor-custo-beneficio",
+    "cidade": "Americana",
+    "servico": "Portaria",
+    "angulo": "melhor-custo-beneficio",
+    "slug": "portaria-melhor-custo-beneficio",
+    "data": "2026-06-07"
   }
 ]
