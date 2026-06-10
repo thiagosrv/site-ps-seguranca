@@ -238,5 +238,21 @@
     "angulo": "melhor-custo-beneficio",
     "slug": "portaria-melhor-custo-beneficio",
     "data": "2026-06-07"
+  },
+  {
+    "id": "americana/cotacao-de-seguranca-patrimonial",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "cotacao",
+    "slug": "cotacao-de-seguranca-patrimonial",
+    "data": "2026-06-10"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-com-supervisao-estrategica",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "supervisao-estrategica",
+    "slug": "seguranca-patrimonial-com-supervisao-estrategica",
+    "data": "2026-06-10"
   }
 ]
