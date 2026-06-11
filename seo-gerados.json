@@ -254,5 +254,21 @@
     "angulo": "supervisao-estrategica",
     "slug": "seguranca-patrimonial-com-supervisao-estrategica",
     "data": "2026-06-10"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-24-horas",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "24-horas",
+    "slug": "seguranca-patrimonial-24-horas",
+    "data": "2026-06-11"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-para-industria",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "para-industria",
+    "slug": "seguranca-patrimonial-para-industria",
+    "data": "2026-06-11"
   }
 ]
