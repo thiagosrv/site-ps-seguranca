@@ -270,5 +270,21 @@
     "angulo": "para-industria",
     "slug": "seguranca-patrimonial-para-industria",
     "data": "2026-06-11"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-com-pop",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "com-pop",
+    "slug": "seguranca-patrimonial-com-pop",
+    "data": "2026-06-14"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-para-condominio-residencial",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "para-condominio-residencial",
+    "slug": "seguranca-patrimonial-para-condominio-residencial",
+    "data": "2026-06-14"
   }
 ]
