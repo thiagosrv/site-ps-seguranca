@@ -286,5 +286,21 @@
     "angulo": "para-condominio-residencial",
     "slug": "seguranca-patrimonial-para-condominio-residencial",
     "data": "2026-06-14"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-para-centro-comercial",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "para-centro-comercial",
+    "slug": "seguranca-patrimonial-para-centro-comercial",
+    "data": "2026-06-15"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-com-conformidade-trabalhista",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "com-conformidade-trabalhista",
+    "slug": "seguranca-patrimonial-com-conformidade-trabalhista",
+    "data": "2026-06-15"
   }
 ]
