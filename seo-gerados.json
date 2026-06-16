@@ -302,5 +302,21 @@
     "angulo": "com-conformidade-trabalhista",
     "slug": "seguranca-patrimonial-com-conformidade-trabalhista",
     "data": "2026-06-15"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-implantacao-rapida",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "implantacao-rapida",
+    "slug": "seguranca-patrimonial-implantacao-rapida",
+    "data": "2026-06-16"
+  },
+  {
+    "id": "americana/seguranca-patrimonial-melhor-custo-beneficio",
+    "cidade": "Americana",
+    "servico": "Segurança Patrimonial",
+    "angulo": "melhor-custo-beneficio",
+    "slug": "seguranca-patrimonial-melhor-custo-beneficio",
+    "data": "2026-06-16"
   }
 ]
