@@ -318,5 +318,37 @@
     "angulo": "melhor-custo-beneficio",
     "slug": "seguranca-patrimonial-melhor-custo-beneficio",
     "data": "2026-06-16"
+  },
+  {
+    "id": "americana/cotacao-de-rondas-de-seguranca",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "cotacao",
+    "slug": "cotacao-de-rondas-de-seguranca",
+    "data": "2026-06-18"
+  },
+  {
+    "id": "americana/rondas-de-seguranca-com-supervisao-estrategica",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "supervisao-estrategica",
+    "slug": "rondas-de-seguranca-com-supervisao-estrategica",
+    "data": "2026-06-18"
+  },
+  {
+    "id": "americana/rondas-de-seguranca-24-horas",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "24-horas",
+    "slug": "rondas-de-seguranca-24-horas",
+    "data": "2026-07-05"
+  },
+  {
+    "id": "americana/rondas-de-seguranca-para-industria",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "para-industria",
+    "slug": "rondas-de-seguranca-para-industria",
+    "data": "2026-07-05"
   }
 ]
