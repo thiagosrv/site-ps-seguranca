@@ -350,5 +350,21 @@
     "angulo": "para-industria",
     "slug": "rondas-de-seguranca-para-industria",
     "data": "2026-07-05"
+  },
+  {
+    "id": "americana/rondas-de-seguranca-com-pop",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "com-pop",
+    "slug": "rondas-de-seguranca-com-pop",
+    "data": "2026-07-07"
+  },
+  {
+    "id": "americana/rondas-de-seguranca-para-condominio-residencial",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "para-condominio-residencial",
+    "slug": "rondas-de-seguranca-para-condominio-residencial",
+    "data": "2026-07-07"
   }
 ]
