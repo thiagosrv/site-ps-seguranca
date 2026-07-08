@@ -382,5 +382,21 @@
     "angulo": "com-conformidade-trabalhista",
     "slug": "rondas-de-seguranca-com-conformidade-trabalhista",
     "data": "2026-07-07"
+  },
+  {
+    "id": "americana/rondas-de-seguranca-implantacao-rapida",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "implantacao-rapida",
+    "slug": "rondas-de-seguranca-implantacao-rapida",
+    "data": "2026-07-08"
+  },
+  {
+    "id": "americana/rondas-de-seguranca-melhor-custo-beneficio",
+    "cidade": "Americana",
+    "servico": "Rondas de Segurança",
+    "angulo": "melhor-custo-beneficio",
+    "slug": "rondas-de-seguranca-melhor-custo-beneficio",
+    "data": "2026-07-08"
   }
 ]
