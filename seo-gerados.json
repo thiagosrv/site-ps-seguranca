@@ -398,5 +398,21 @@
     "angulo": "melhor-custo-beneficio",
     "slug": "rondas-de-seguranca-melhor-custo-beneficio",
     "data": "2026-07-08"
+  },
+  {
+    "id": "americana/cotacao-de-limpeza",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "cotacao",
+    "slug": "cotacao-de-limpeza",
+    "data": "2026-07-25"
+  },
+  {
+    "id": "americana/limpeza-com-supervisao-estrategica",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "supervisao-estrategica",
+    "slug": "limpeza-com-supervisao-estrategica",
+    "data": "2026-07-25"
   }
 ]
