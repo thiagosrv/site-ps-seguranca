@@ -414,5 +414,21 @@
     "angulo": "supervisao-estrategica",
     "slug": "limpeza-com-supervisao-estrategica",
     "data": "2026-07-25"
+  },
+  {
+    "id": "americana/limpeza-24-horas",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "24-horas",
+    "slug": "limpeza-24-horas",
+    "data": "2026-07-26"
+  },
+  {
+    "id": "americana/limpeza-para-industria",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "para-industria",
+    "slug": "limpeza-para-industria",
+    "data": "2026-07-26"
   }
 ]
