@@ -430,5 +430,21 @@
     "angulo": "para-industria",
     "slug": "limpeza-para-industria",
     "data": "2026-07-26"
+  },
+  {
+    "id": "americana/limpeza-com-pop",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "com-pop",
+    "slug": "limpeza-com-pop",
+    "data": "2026-08-08"
+  },
+  {
+    "id": "americana/limpeza-para-condominio-residencial",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "para-condominio-residencial",
+    "slug": "limpeza-para-condominio-residencial",
+    "data": "2026-08-08"
   }
 ]
