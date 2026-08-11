@@ -446,5 +446,21 @@
     "angulo": "para-condominio-residencial",
     "slug": "limpeza-para-condominio-residencial",
     "data": "2026-08-08"
+  },
+  {
+    "id": "americana/limpeza-para-centro-comercial",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "para-centro-comercial",
+    "slug": "limpeza-para-centro-comercial",
+    "data": "2026-08-11"
+  },
+  {
+    "id": "americana/limpeza-com-conformidade-trabalhista",
+    "cidade": "Americana",
+    "servico": "Limpeza",
+    "angulo": "com-conformidade-trabalhista",
+    "slug": "limpeza-com-conformidade-trabalhista",
+    "data": "2026-08-11"
   }
 ]
