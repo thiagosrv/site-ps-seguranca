@@ -478,5 +478,21 @@
     "angulo": "melhor-custo-beneficio",
     "slug": "limpeza-melhor-custo-beneficio",
     "data": "2026-08-15"
+  },
+  {
+    "id": "americana/cotacao-de-zelador",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "cotacao",
+    "slug": "cotacao-de-zelador",
+    "data": "2026-08-15"
+  },
+  {
+    "id": "americana/zelador-com-supervisao-estrategica",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "supervisao-estrategica",
+    "slug": "zelador-com-supervisao-estrategica",
+    "data": "2026-08-15"
   }
 ]
