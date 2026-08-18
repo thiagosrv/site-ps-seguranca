@@ -494,5 +494,21 @@
     "angulo": "supervisao-estrategica",
     "slug": "zelador-com-supervisao-estrategica",
     "data": "2026-08-15"
+  },
+  {
+    "id": "americana/zelador-24-horas",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "24-horas",
+    "slug": "zelador-24-horas",
+    "data": "2026-08-18"
+  },
+  {
+    "id": "americana/zelador-para-industria",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "para-industria",
+    "slug": "zelador-para-industria",
+    "data": "2026-08-18"
   }
 ]
