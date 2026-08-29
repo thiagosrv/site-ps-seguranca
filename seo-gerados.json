@@ -510,5 +510,21 @@
     "angulo": "para-industria",
     "slug": "zelador-para-industria",
     "data": "2026-08-18"
+  },
+  {
+    "id": "americana/zelador-com-pop",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "com-pop",
+    "slug": "zelador-com-pop",
+    "data": "2026-08-29"
+  },
+  {
+    "id": "americana/zelador-para-condominio-residencial",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "para-condominio-residencial",
+    "slug": "zelador-para-condominio-residencial",
+    "data": "2026-08-29"
   }
 ]
