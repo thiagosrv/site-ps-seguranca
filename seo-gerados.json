@@ -526,5 +526,21 @@
     "angulo": "para-condominio-residencial",
     "slug": "zelador-para-condominio-residencial",
     "data": "2026-08-29"
+  },
+  {
+    "id": "americana/zelador-para-centro-comercial",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "para-centro-comercial",
+    "slug": "zelador-para-centro-comercial",
+    "data": "2026-09-07"
+  },
+  {
+    "id": "americana/zelador-com-conformidade-trabalhista",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "com-conformidade-trabalhista",
+    "slug": "zelador-com-conformidade-trabalhista",
+    "data": "2026-09-07"
   }
 ]
