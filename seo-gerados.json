@@ -542,5 +542,21 @@
     "angulo": "com-conformidade-trabalhista",
     "slug": "zelador-com-conformidade-trabalhista",
     "data": "2026-09-07"
+  },
+  {
+    "id": "americana/zelador-implantacao-rapida",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "implantacao-rapida",
+    "slug": "zelador-implantacao-rapida",
+    "data": "2026-09-07"
+  },
+  {
+    "id": "americana/zelador-melhor-custo-beneficio",
+    "cidade": "Americana",
+    "servico": "Zelador",
+    "angulo": "melhor-custo-beneficio",
+    "slug": "zelador-melhor-custo-beneficio",
+    "data": "2026-09-07"
   }
 ]
