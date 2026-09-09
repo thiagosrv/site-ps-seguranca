@@ -558,5 +558,21 @@
     "angulo": "melhor-custo-beneficio",
     "slug": "zelador-melhor-custo-beneficio",
     "data": "2026-09-07"
+  },
+  {
+    "id": "americana/cotacao-de-copeira",
+    "cidade": "Americana",
+    "servico": "Copeira",
+    "angulo": "cotacao",
+    "slug": "cotacao-de-copeira",
+    "data": "2026-09-09"
+  },
+  {
+    "id": "americana/copeira-com-supervisao-estrategica",
+    "cidade": "Americana",
+    "servico": "Copeira",
+    "angulo": "supervisao-estrategica",
+    "slug": "copeira-com-supervisao-estrategica",
+    "data": "2026-09-09"
   }
 ]
