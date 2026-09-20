@@ -590,5 +590,21 @@
     "angulo": "para-industria",
     "slug": "copeira-para-industria",
     "data": "2026-09-20"
+  },
+  {
+    "id": "americana/copeira-com-pop",
+    "cidade": "Americana",
+    "servico": "Copeira",
+    "angulo": "com-pop",
+    "slug": "copeira-com-pop",
+    "data": "2026-09-20"
+  },
+  {
+    "id": "americana/copeira-para-condominio-residencial",
+    "cidade": "Americana",
+    "servico": "Copeira",
+    "angulo": "para-condominio-residencial",
+    "slug": "copeira-para-condominio-residencial",
+    "data": "2026-09-20"
   }
 ]
