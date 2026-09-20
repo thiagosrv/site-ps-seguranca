@@ -574,5 +574,21 @@
     "angulo": "supervisao-estrategica",
     "slug": "copeira-com-supervisao-estrategica",
     "data": "2026-09-09"
+  },
+  {
+    "id": "americana/copeira-24-horas",
+    "cidade": "Americana",
+    "servico": "Copeira",
+    "angulo": "24-horas",
+    "slug": "copeira-24-horas",
+    "data": "2026-09-20"
+  },
+  {
+    "id": "americana/copeira-para-industria",
+    "cidade": "Americana",
+    "servico": "Copeira",
+    "angulo": "para-industria",
+    "slug": "copeira-para-industria",
+    "data": "2026-09-20"
   }
 ]
